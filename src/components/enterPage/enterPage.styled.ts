@@ -1,4 +1,27 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
+export const EnterPageContainerStyled = styled.div`
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  box-sizing: border-box;
+  
+  @media screen and (max-width: 879px) {
+    padding: 20px 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 439px) {
+    gap: 20px;
+  }
+`;
 
 export const PhotoContainerStyled = styled.div`
   width: 400px;
@@ -9,6 +32,7 @@ export const PhotoContainerStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 
   @media screen and (max-width: 879px) {
     width: 100%;
@@ -62,21 +86,6 @@ export const MobileLogoContainer = styled.div`
 export const LogoContainerStyled = styled.div`
   width: 400px;
   height: 100px;
-  padding: 0 15px;
-  border: 3px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  font-size: 80px;
-  line-height: 90px;
-  letter-spacing: 15px;
-  box-sizing: border-box;
-  text-align: center;
-
-  @media screen and (max-width: 439px) {
-    border-width: 2px;
-  }
 `;
 
 export const LogoStyled = styled.img`
@@ -223,13 +232,15 @@ export const ButtonContainerStyled = styled.div`
   }
 `;
 
-export const ButtonStyled = styled.button`
+// export const ButtonStyled = styled.button`
+export const ButtonStyled = styled(NavLink)`
   width: 100%;
   height: 35px;
   padding: 5px;
   background: black;
   color: white;
   border-radius: 5px;
+  box-sizing: border-box;
 
   @media screen and (max-width: 879px) {
     width: 265px;

@@ -1,33 +1,29 @@
 import {
+	EnterPageContainerStyled,
 	PhotoContainerStyled,
 	PhotoStyled,
 	ContentContainerStyled,
 	LogoContainerStyled,
-	LogoStyled,
-	AfterBlockStyled,
 	NameContainerStyled,
 	NameStyled,
 	DescriptionContainerStyled,
 	ButtonContainerStyled, ButtonStyled,
 	ButtonDescriptionContainerStyled,
-} from './HomeBlock.styled.ts';
+} from './enterPage.styled.ts';
 import avatar from '../../assets/images/avatar.webp';
-import logo from '../../assets/images/elmin_logo_black.webp';
-import {HomeBlockPropsType} from '../../App.tsx';
+import {PATH} from '../../App.tsx';
+import {Logo} from "../common/logo/logo.component.tsx";
 
-export const HomeBlockDesktop = ({isShow}: HomeBlockPropsType) => {
+export const EnterPageDesktop = () => {
 
 	return (
-		<>
+		<EnterPageContainerStyled>
 			<PhotoContainerStyled>
 				<PhotoStyled src={avatar}/>
 			</PhotoContainerStyled>
 			<ContentContainerStyled>
 				<LogoContainerStyled>
-					<LogoStyled src={logo}/>
-					<AfterBlockStyled isShow={isShow}>
-						{isShow && <span>CG ARTIST</span>}
-					</AfterBlockStyled>
+					<Logo variant='black'/>
 				</LogoContainerStyled>
 				<NameContainerStyled>
 					<NameStyled>Elmin Karaev</NameStyled>
@@ -36,12 +32,12 @@ export const HomeBlockDesktop = ({isShow}: HomeBlockPropsType) => {
 					</DescriptionContainerStyled>
 				</NameContainerStyled>
 				<ButtonContainerStyled>
-					<ButtonStyled>Enter</ButtonStyled>
+					<ButtonStyled to={PATH.HOME}>Enter</ButtonStyled>
 					<ButtonDescriptionContainerStyled>
                         Press Enter to go to my site
 					</ButtonDescriptionContainerStyled>
 				</ButtonContainerStyled>
 			</ContentContainerStyled>
-		</>
+		</EnterPageContainerStyled>
 	);
 };

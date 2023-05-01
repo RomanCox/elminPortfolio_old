@@ -1,31 +1,27 @@
 import {
+    EnterPageContainerStyled,
     PhotoContainerStyled,
     PhotoStyled,
     ContentContainerStyled,
     MobileLogoContainer,
     LogoContainerStyled,
-    LogoStyled,
-    AfterBlockStyled,
     NameContainerStyled,
     NameStyled,
     DescriptionContainerStyled,
     ButtonContainerStyled, ButtonStyled,
     ButtonDescriptionContainerStyled,
-} from './HomeBlock.styled.ts';
+} from './enterPage.styled.ts';
 import avatar from '../../assets/images/avatar.webp';
-import logo from '../../assets/images/elmin_logo_black.webp';
-import {HomeBlockPropsType} from '../../App.tsx';
+import {PATH} from '../../App.tsx';
+import {Logo} from "../common/logo/logo.component.tsx";
 
-export const HomeBlockMobile = ({isShow}: HomeBlockPropsType) => {
+export const EnterPageMobile = () => {
 
     return (
-        <>
+        <EnterPageContainerStyled>
             <MobileLogoContainer>
                 <LogoContainerStyled>
-                    <LogoStyled src={logo}/>
-                    <AfterBlockStyled isShow={isShow}>
-                        {isShow && <span>CG ARTIST</span>}
-                    </AfterBlockStyled>
+                    <Logo variant='black'/>
                 </LogoContainerStyled>
             </MobileLogoContainer>
             <PhotoContainerStyled>
@@ -39,12 +35,12 @@ export const HomeBlockMobile = ({isShow}: HomeBlockPropsType) => {
                     </DescriptionContainerStyled>
                 </NameContainerStyled>
                 <ButtonContainerStyled>
-                    <ButtonStyled>Enter</ButtonStyled>
+                    <ButtonStyled to={PATH.HOME}>Enter</ButtonStyled>
                     <ButtonDescriptionContainerStyled>
                         Press Enter to go to my site
                     </ButtonDescriptionContainerStyled>
                 </ButtonContainerStyled>
             </ContentContainerStyled>
-        </>
+        </EnterPageContainerStyled>
     );
 };
