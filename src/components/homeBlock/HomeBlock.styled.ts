@@ -3,8 +3,12 @@ import styled from 'styled-components';
 export const PhotoContainerStyled = styled.div`
   width: 400px;
   height: 500px;
+  padding: 40px;
   background: black;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 879px) {
     width: 100%;
@@ -13,7 +17,7 @@ export const PhotoContainerStyled = styled.div`
   }
 
   @media screen and (max-width: 439px) {
-    padding: 0 10px;
+    padding: 20px;
     box-sizing: border-box;
   }
 `;
@@ -36,9 +40,7 @@ export const ContentContainerStyled = styled.div`
 
   @media screen and (max-width: 879px) {
     height: 280px;
-    //padding-left: 30px;
     padding-left: calc(10px + (30 - 10) * (100vw - 320px) / (879 - 320));
-    //padding-right: 30px;
     padding-right: calc(10px + (30 - 10) * (100vw - 320px) / (879 - 320));
     gap: 20px;
   }
@@ -172,6 +174,7 @@ export const NameContainerStyled = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  color: black;
 `;
 
 export const NameStyled = styled.div`
