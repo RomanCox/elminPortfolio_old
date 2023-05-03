@@ -5,12 +5,14 @@ import {
 	LogoStyled,
 	AfterBlockStyled,
 } from './logo.styled.ts';
-import logo from '../../../assets/images/elmin_logo_black.webp';
+import logoBlack from '../../../assets/images/elmin_logo_black.webp';
+import logoWhite from '../../../assets/images/elmin_logo_white.webp';
 
 export type VariantType = 'black' | 'white';
 
 export interface LogoShowType {
 	isShow: boolean,
+	color: VariantType,
 }
 
 export type LogoPropsType = {
@@ -28,8 +30,8 @@ export const Logo = ({variant}: LogoPropsType) => {
 
 	return (
 		<LogoContainerStyled color={variant}>
-			<LogoStyled src={logo}/>
-			<AfterBlockStyled isShow={isShow}>
+			<LogoStyled src={variant === 'black' ? logoBlack : logoWhite}/>
+			<AfterBlockStyled isShow={isShow} color={variant}>
 				{isShow && <span>CG ARTIST</span>}
 			</AfterBlockStyled>
 		</LogoContainerStyled>

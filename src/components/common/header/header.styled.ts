@@ -9,9 +9,18 @@ export const HeaderContainerStyled = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   box-sizing: border-box;
+`;
+
+export const BurgerButtonContainerStyled = styled.div`
+  width: 250px;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
 `;
 
 export const BurgerButtonStyled = styled.div`
@@ -90,18 +99,6 @@ export const SocialLinksContainerStyled = styled.div`
   justify-content: space-between;
 `;
 
-export const SocialLinkStyled = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: white;
-  color: black;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 29px;
-  text-align: center;
-`;
-
 export const LangContainerStyled = styled.div`
   width: 70px;
   height: 100%;
@@ -117,4 +114,5 @@ export const LangStyled = styled.div`
   font-weight: 400;
   line-height: 29px;
   text-align: center;
+  cursor: pointer;
 `;

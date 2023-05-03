@@ -53,7 +53,7 @@ export const AfterBlockStyled = styled.div<LogoShowType>`
     content: '';
     width: 1px;
     height: 0;
-    background: black;
+    background: ${({ color }) => color};
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);

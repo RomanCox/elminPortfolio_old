@@ -13,7 +13,7 @@ import {
 } from './enterPage.styled.ts';
 import avatar from '../../assets/images/avatar.webp';
 import {PATH} from '../../App.tsx';
-import {Logo} from "../common/logo/logo.component.tsx";
+import {Logo} from '../common/logo/logo.component.tsx';
 
 export const EnterPageMobile = () => {
 

@@ -1,25 +1,26 @@
 import {
     HeaderContainerStyled, LangContainerStyled,
-    LogoContainerStyled, SocialLinksAndLangContainerStyled,
-    SocialLinkStyled, SocialLinksContainerStyled, LangStyled,
+    BurgerButtonContainerStyled, LogoContainerStyled,
+    SocialLinksAndLangContainerStyled,
+    SocialLinksContainerStyled, LangStyled,
 } from './header.styled.ts';
 import {BurgerButton} from './burgerButton.tsx';
-import {Logo} from "../logo/logo.component.tsx";
+import {Logo} from '../logo/logo.component.tsx';
+import {IconSet} from '../iconSet/iconSet.component.tsx';
 
 export const Header = () => {
 
     return (
         <HeaderContainerStyled>
-            <BurgerButton/>
+            <BurgerButtonContainerStyled>
+                <BurgerButton/>
+            </BurgerButtonContainerStyled>
             <LogoContainerStyled>
                 <Logo variant='white'/>
             </LogoContainerStyled>
             <SocialLinksAndLangContainerStyled>
                 <SocialLinksContainerStyled>
-                    <SocialLinkStyled>in</SocialLinkStyled>
-                    <SocialLinkStyled>tg</SocialLinkStyled>
-                    <SocialLinkStyled>ig</SocialLinkStyled>
-                    <SocialLinkStyled>Be</SocialLinkStyled>
+                    <IconSet/>
                 </SocialLinksContainerStyled>
                 <LangContainerStyled>
                     <LangStyled>RU</LangStyled>
