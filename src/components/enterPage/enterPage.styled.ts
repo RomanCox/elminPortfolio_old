@@ -27,7 +27,7 @@ export const PhotoContainerStyled = styled.div`
   width: 400px;
   height: 500px;
   padding: 40px;
-  background: black;
+  background: #000;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -86,6 +86,7 @@ export const MobileLogoContainer = styled.div`
 export const LogoContainerStyled = styled.div`
   width: 400px;
   height: 100px;
+  font-size: 16px;
 `;
 
 export const LogoStyled = styled.img`
@@ -97,8 +98,8 @@ export const LogoStyled = styled.img`
 export const AfterBlockStyled = styled.div<{isShow: boolean}>`
   width: 0;
   height: 20px;
-  background: white;
-  color: black;
+  background: #fff;
+  color: #000;
   position: absolute;
   left: 50%;
   bottom: -11px;
@@ -120,7 +121,7 @@ export const AfterBlockStyled = styled.div<{isShow: boolean}>`
     content: '';
     width: 1px;
     height: 0;
-    background: black;
+    background: #000;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -183,7 +184,7 @@ export const NameContainerStyled = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  color: black;
+  color: #000;
 `;
 
 export const NameStyled = styled.div`
@@ -232,13 +233,12 @@ export const ButtonContainerStyled = styled.div`
   }
 `;
 
-// export const ButtonStyled = styled.button`
 export const ButtonStyled = styled(NavLink)`
   width: 100%;
   height: 35px;
   padding: 5px;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
   border-radius: 5px;
   box-sizing: border-box;
 

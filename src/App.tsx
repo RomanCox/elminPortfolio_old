@@ -4,7 +4,8 @@ import {Routes, Route} from 'react-router-dom';
 import {useWindowSize} from './hooks/useWindowSize.ts';
 import {EnterPageDesktop} from './components/enterPage/enterPageDesktop.component.tsx';
 import {EnterPageMobile} from './components/enterPage/enterPageMobile.component.tsx';
-import {EnterPage} from './components/homePage/homePage.component.tsx';
+import {HomePage} from './components/homePage/homePage.component.tsx';
+import {AboutPage} from './components/aboutPage/aboutPage.component.tsx';
 
 export const PATH = {
     EMPTY: '/',
@@ -38,15 +39,15 @@ export const App = () => {
             <Route
                 path={PATH.HOME}
                 element={
-                    <EnterPage/>
+                    <HomePage/>
                 }
             />
-            {/*<Route*/}
-            {/*    path={PATH.ABOUT}*/}
-            {/*    element={*/}
-            {/*        <About/>*/}
-            {/*    }*/}
-            {/*/>*/}
+            <Route
+                path={PATH.ABOUT}
+                element={
+                    <AboutPage/>
+                }
+            />
             {/*<Route*/}
             {/*    path={PATH.PORTFOLIO}*/}
             {/*    element={*/}

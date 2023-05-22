@@ -2,17 +2,23 @@ import {
     FooterContainerStyled, LocationContainerStyled,
     SocialLinksContainerStyled,
 } from './footer.styled.ts';
+import {IconSet} from '../iconSet/iconSet.component.tsx';
 
+export interface FooterPropsType {
+    homePage?: boolean
+}
 
-export const Footer = () => {
+export const Footer = ({homePage = false}: FooterPropsType) => {
 
     return (
-        <FooterContainerStyled>
+        <FooterContainerStyled homePage={homePage}>
             <LocationContainerStyled>
                 Warsaw, Poland
             </LocationContainerStyled>
             <SocialLinksContainerStyled>
-                Portfolio
+                {homePage ? 'Portfolio'
+                    : <IconSet/>
+                }
             </SocialLinksContainerStyled>
         </FooterContainerStyled>
     );

@@ -1,21 +1,25 @@
 import {BarsStyled, BurgerButtonStyled} from './header.styled.ts';
-import {useState} from "react";
 
 export interface BurgerStyledPropsType {
-    isBurgerMenuOpened: boolean;
+    isBurgerMenuOpened: boolean,
 }
 
-export const BurgerButton = () => {
-    const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState<boolean>(false);
+interface BurgerButtonPropsType {
+    menuIsShow: boolean,
+    menuSwitch: ()=> void,
+}
 
-    const onClickHandler = () => {
-        setIsBurgerMenuOpened(!isBurgerMenuOpened);
-    };
+export const BurgerButton = ({menuIsShow, menuSwitch}: BurgerButtonPropsType) => {
+    // const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState<boolean>(false);
+    //
+    // const onClickHandler = () => {
+    //     setIsBurgerMenuOpened(!isBurgerMenuOpened);
+    // };
 
     return (
-        <BurgerButtonStyled onClick={onClickHandler}>
+        <BurgerButtonStyled onClick={menuSwitch}>
             <BarsStyled
-                isBurgerMenuOpened={isBurgerMenuOpened}
+                isBurgerMenuOpened={menuIsShow}
             />
         </BurgerButtonStyled>
     );

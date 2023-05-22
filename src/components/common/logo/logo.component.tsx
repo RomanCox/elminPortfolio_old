@@ -13,13 +13,17 @@ export type VariantType = 'black' | 'white';
 export interface LogoShowType {
 	isShow: boolean,
 	color: VariantType,
+	max: boolean,
+	homePage: boolean,
 }
 
 export type LogoPropsType = {
 	variant: VariantType,
+	max?: boolean,
+	homePage?: boolean,
 }
 
-export const Logo = ({variant}: LogoPropsType) => {
+export const Logo = ({variant, max = false, homePage = false}: LogoPropsType) => {
 	const [isShow, setIsShow] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -31,7 +35,7 @@ export const Logo = ({variant}: LogoPropsType) => {
 	return (
 		<LogoContainerStyled color={variant}>
 			<LogoStyled src={variant === 'black' ? logoBlack : logoWhite}/>
-			<AfterBlockStyled isShow={isShow} color={variant}>
+			<AfterBlockStyled isShow={isShow} color={variant} max={max} homePage={homePage}>
 				{isShow && <span>CG ARTIST</span>}
 			</AfterBlockStyled>
 		</LogoContainerStyled>

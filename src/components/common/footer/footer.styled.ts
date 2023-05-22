@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import {FooterPropsType} from "./footer.component.tsx";
 
-export const FooterContainerStyled = styled.div`
+export const FooterContainerStyled = styled.div<FooterPropsType>`
   width: 100%;
   max-width: 100vw;
   height: 75px;
-  padding: 10px 20px;
+  padding: 10px 30px;
+  box-sizing: border-box;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -12,12 +14,11 @@ export const FooterContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.5);
+  background: ${({ homePage }) => homePage ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
 `;
 
-export const LocationContainerStyled = styled.div`
-  color: white;
+export const LocationContainerStyled = styled.div<FooterPropsType>`
+  color: ${({ homePage }) => homePage ? '#fff' : '#000'};
   font-family: Libre Franklin, sans-serif;
   font-size: 20px;
   line-height: 24px;
@@ -28,7 +29,7 @@ export const LocationContainerStyled = styled.div`
 export const SocialLinksContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: #fff;
   font-family: Libre Franklin, sans-serif;
   font-size: 20px;
   line-height: 24px;

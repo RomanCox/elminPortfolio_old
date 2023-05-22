@@ -12,7 +12,7 @@ import {
 } from './enterPage.styled.ts';
 import avatar from '../../assets/images/avatar.webp';
 import {PATH} from '../../App.tsx';
-import {Logo} from "../common/logo/logo.component.tsx";
+import {Logo} from '../common/logo/logo.component.tsx';
 
 export const EnterPageDesktop = () => {
 
@@ -23,7 +23,7 @@ export const EnterPageDesktop = () => {
 			</PhotoContainerStyled>
 			<ContentContainerStyled>
 				<LogoContainerStyled>
-					<Logo variant='black'/>
+					<Logo variant='black' max/>
 				</LogoContainerStyled>
 				<NameContainerStyled>
 					<NameStyled>Elmin Karaev</NameStyled>

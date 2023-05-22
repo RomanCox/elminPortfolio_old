@@ -59,7 +59,7 @@ export const ServicesListContainer = styled.div`
   justify-content: center;
   gap: 20px;
   position: relative;
-  color: white;
+  color: #fff;
   font-family: Libre Franklin, sans-serif;
   font-size: 24px;
   line-height: 29px;
@@ -75,7 +75,7 @@ export const ServicesListContainer = styled.div`
       position: absolute;
       top: 0;
       right: 0;
-      background: white;
+      background: #fff;
     }
   }
 `;
@@ -84,6 +84,6 @@ export const ButtonContainer = styled.div`
   width: 200px;
   height: 50px;
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #fff;
   border-radius: 5px;
 `;

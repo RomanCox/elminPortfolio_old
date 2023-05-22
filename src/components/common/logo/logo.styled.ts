@@ -10,11 +10,8 @@ export const LogoContainerStyled = styled.div<{ color: VariantType }>`
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  font-size: 80px;
-  line-height: 90px;
-  letter-spacing: 15px;
   box-sizing: border-box;
-  text-align: center;
+  font-size: 100%;
 
   @media screen and (max-width: 439px) {
     border-width: 2px;
@@ -29,16 +26,17 @@ export const LogoStyled = styled.img`
 
 export const AfterBlockStyled = styled.div<LogoShowType>`
   width: 0;
-  height: 20px;
-  background: white;
-  color: black;
+  height: ${({max = false}) => max ? '16px' : '16%'};
+  background: #fff;
+  color: #000;
   position: absolute;
   left: 50%;
-  bottom: -11px;
+  bottom: ${({max, homePage}) => max || homePage ? '-10%' : '-12%'};
   transform: translateX(-50%);
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 100%;
+  line-height: 100%;
+  font-weight: 600;
   letter-spacing: normal;
   box-sizing: border-box;
   text-align: center;
@@ -73,7 +71,7 @@ export const AfterBlockStyled = styled.div<LogoShowType>`
       width: 0;
     }
     100% {
-      width: 100px;
+      width: 25%;
     }
   }
 
@@ -82,10 +80,10 @@ export const AfterBlockStyled = styled.div<LogoShowType>`
       height: 0;
     }
     33% {
-       height: 80%;
+       height: 100%;
     }
     66% {
-      height: 80%;
+      height: 100%;
     }
     100% {
       height: 0;
