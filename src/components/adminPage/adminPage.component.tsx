@@ -6,7 +6,7 @@ import {
 import {LoginPage} from './loginPage.component.tsx';
 
 export const AdminPage = () => {
-    const [isRight, setIsRight] = useState(true);
+    const [isRight, setIsRight] = useState(false);
     const [isWrong, setIsWrong] = useState(false);
 
     return (
