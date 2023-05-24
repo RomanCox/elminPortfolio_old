@@ -11,32 +11,32 @@ import logoWhite from '../../../assets/images/elmin_logo_white.webp';
 export type VariantType = 'black' | 'white';
 
 export interface LogoShowType {
-	isShow: boolean,
+	show: boolean,
 	color: VariantType,
-	max: boolean,
+	size: string,
 	homePage: boolean,
 }
 
 export type LogoPropsType = {
 	variant: VariantType,
-	max?: boolean,
+	size?: string,
 	homePage?: boolean,
 }
 
-export const Logo = ({variant, max = false, homePage = false}: LogoPropsType) => {
-	const [isShow, setIsShow] = useState<boolean>(false);
+export const Logo = ({variant, size = 'small', homePage = false}: LogoPropsType) => {
+	const [show, setShow] = useState<boolean>(false);
 
 	useEffect(() => {
 		setTimeout(() => {
-			setIsShow(true);
+			setShow(true);
 		}, 2000);
 	}, []);
 
 	return (
 		<LogoContainerStyled color={variant}>
 			<LogoStyled src={variant === 'black' ? logoBlack : logoWhite}/>
-			<AfterBlockStyled isShow={isShow} color={variant} max={max} homePage={homePage}>
-				{isShow && <span>CG ARTIST</span>}
+			<AfterBlockStyled show={show} color={variant} size={size} homePage={homePage}>
+				{show && <span>CG ARTIST</span>}
 			</AfterBlockStyled>
 		</LogoContainerStyled>
 	);

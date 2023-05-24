@@ -6,7 +6,8 @@ import {EnterPageDesktop} from './components/enterPage/enterPageDesktop.componen
 import {EnterPageMobile} from './components/enterPage/enterPageMobile.component.tsx';
 import {HomePage} from './components/homePage/homePage.component.tsx';
 import {AboutPage} from './components/aboutPage/aboutPage.component.tsx';
-import {AdminPage} from "./components/adminPage/adminPage.component.tsx";
+import {AdminLayoutPage} from './components/adminPage/adminLayoutPage.component.tsx';
+import {AboutContextProvider} from './state/aboutPage';
 
 export const PATH = {
     EMPTY: '/',
@@ -47,13 +48,15 @@ export const App = () => {
             <Route
                 path={PATH.ABOUT}
                 element={
-                    <AboutPage/>
+                    <AboutContextProvider>
+                        <AboutPage/>
+                    </AboutContextProvider>
                 }
             />
             <Route
                 path={PATH.ADMIN}
                 element={
-                    <AdminPage/>
+                    <AdminLayoutPage/>
                 }
             />
             {/*<Route*/}

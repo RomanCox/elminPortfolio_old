@@ -23,7 +23,7 @@ export const EnterPageDesktop = () => {
 			</PhotoContainerStyled>
 			<ContentContainerStyled>
 				<LogoContainerStyled>
-					<Logo variant='black' max/>
+					<Logo variant='black' size='large'/>
 				</LogoContainerStyled>
 				<NameContainerStyled>
 					<NameStyled>Elmin Karaev</NameStyled>

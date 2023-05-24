@@ -130,14 +130,14 @@ export const NavbarStyled = styled.nav`
 `;
 
 export const NavbarItemStyled = styled(NavLink)`
-  padding: 0 20px;
+  padding: 0 40px;
   box-sizing: border-box;
   position: relative;
   color: #000;
   font-family: Libre Franklin, sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
-  line-height: 30px;
+  line-height: 29px;
   text-align: center;
   text-decoration: none;
   user-select: none;

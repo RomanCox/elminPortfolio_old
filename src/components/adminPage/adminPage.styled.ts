@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {TextField, IconButton, Button} from '@mui/material';
+import {TextField, IconButton, Button, Box, Tabs, Tab} from '@mui/material';
 
 export const AdminPageContainerStyled = styled.div`
   width: 100%;
@@ -12,6 +12,34 @@ export const AdminPageContainerStyled = styled.div`
   align-items: center;
   gap: 40px;
   box-sizing: border-box;
+`;
+
+export const AdminContainerStyled = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  box-sizing: border-box;
+`;
+
+export const ContentContainerStyled = styled(Box)`
+  
+`;
+
+export const TabsContainerStyled = styled(Box)`
+    
+`;
+
+export const TabsStyled = styled(Tabs)`
+  
+`;
+
+export const TabStyled = styled(Tab)`
+  &:active, &:focus { outline: none; }
 `;
 
 export const LoginContainerStyled = styled.div<{isWrong: boolean}>`
@@ -54,6 +82,14 @@ export const TitleContainerStyled = styled.div`
   text-align: center;
 `;
 
+export const SubTitleContainerStyled = styled.div`
+  font-family: Libre Franklin, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 600;
+  text-align: center;
+`;
+
 export const FormStyled = styled.form`
   width: 350px;
   height: 150px;
@@ -88,4 +124,5 @@ export const IconButtonStyled = styled(IconButton)`
 
 export const ButtonStyled = styled(Button)`
   width: 50%;
+  &:active, &:focus { outline: none; }
 `;
