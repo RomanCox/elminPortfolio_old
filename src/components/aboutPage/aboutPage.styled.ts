@@ -16,7 +16,7 @@ export const AboutPageContainerStyled = styled.div`
 export const NavigationContainerStyled = styled.div`
   width: 100%;
   height: 300px;
-  padding: 0 50px;
+  padding: 50px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -25,18 +25,18 @@ export const NavigationContainerStyled = styled.div`
 `;
 
 export const TitleContainerStyled = styled.div`
-  width: 250px;
-  height: 87px;
-  padding-top: 20px;
+  width: 225px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
+  position: absolute;
+  top: 20px;
   font-family: Libre Franklin, sans-serif;
   font-size: 56px;
   line-height: 67px;
   font-weight: 700;
   text-align: center;
-  position: relative;
+  
 `;
 
 export const ImageContainer = styled.div`
@@ -59,18 +59,20 @@ export const ImageStyled = styled.img`
 `;
 
 export const ChaptersStyled = styled.div`
+  width: 100%;
   height: 100%;
+  padding-left: 400px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
 `;
 
 export const NavigationStyled = styled.div`
-  height: 87px;
-  padding-bottom: 5px;
+  width: 100%;
+  padding-left: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -80,31 +82,30 @@ export const NavigationStyled = styled.div`
 
 export const NavigationItemStyled = styled.div<{isActive: boolean}>`
   width: 175px;
-  //height: 100%;
+  position: relative;
   font-family: Libre Franklin, sans-serif;
-  //font-size: 24px;
   font-size: ${({ isActive }) => isActive ? '32px' : '24px'};
-  //line-height: 29px;
-  line-height: ${({ isActive }) => isActive ? '38px' : '29px'};
-  //font-weight: 500;
+  line-height: 38px;
   font-weight: ${({ isActive }) => isActive ? '700' : '500'};
   text-align: center;
-  position: relative;
+  user-select: none;
   cursor: pointer;
 `;
 
 export const CVButtonStyled = styled.button`
-  padding: 10px 20px;
+  height: 38px;
   border-radius: 7px;
   border: 2px solid #000;
+  box-sizing: border-box;
   background: #828282;
   color: #000;
-  font-family: Libre Franklin, sans-serif;
-  font-size: 19px;
-  line-height: 14px;
-  font-weight: 400;
-  text-align: center;
   position: relative;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+  text-align: center;
+  user-select: none;
 
   &:hover, &:active, &:focus {
     outline: none;
@@ -114,17 +115,21 @@ export const CVButtonStyled = styled.button`
 
 export const DescriptionContainerStyled = styled.div`
   color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
   font-family: Libre Franklin, sans-serif;
-  font-size: 19px;
-  line-height: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
   text-align: center;
-  position: relative;
+  user-select: none;
+`;
 
-  &:hover, &:active, &:focus {
-    outline: none;
-    border-color: #000;
-  }
+export const DescriptionStyled = styled.div`
+
 `;
 
 export const BottomLineStyled = styled.div`
@@ -135,4 +140,71 @@ export const BottomLineStyled = styled.div`
   bottom: 0;
   z-index: 1;
   background: #CDCCD7;
+`;
+
+export const ContentContainerStyled = styled.div`
+  width: 100%;
+  padding-left: 450px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+`;
+
+export const ContentTitleContainerStyled = styled.div`
+  width: 250px;
+  padding-top: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 700;
+  text-align: left;
+  user-select: none;
+`;
+
+export const EducationContainerStyled = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 100px;
+`;
+
+export const YearsStyled = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  text-align: left;
+  user-select: none;
+`;
+
+export const TextContainerStyled = styled.div`
+  max-width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+`;
+
+export const TextStyled = styled.div`
+  font-family: Libre Franklin, sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  text-align: left;
+  user-select: none;
+  white-space: pre;
+`;
+
+export const TextBoldStyled = styled(TextStyled)`
+  font-weight: 700;
 `;

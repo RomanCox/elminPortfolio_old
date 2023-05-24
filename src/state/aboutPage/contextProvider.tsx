@@ -35,11 +35,11 @@ const aboutPage = {
                     year: '2021-2022',
                     title: 'School Dviz',
                     description: [
-                        'Online Course "Unreal Engine 4 For Archviz"',
-                        'Online Course "Unreal Engine 5 For Archviz"',
-                        'Online Course "Essential Blueprints for Archviz"',
-                        'Online Course "Marvelous designer for archviz"',
-                        'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs',
+                        'Online Course "Unreal Engine 4 For Archviz"\n' +
+                        'Online Course "Unreal Engine 5 For Archviz"\n' +
+                        'Online Course "Essential Blueprints for Archviz"\n' +
+                        'Online Course "Marvelous designer for archviz"\n' +
+                        'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs'
                     ],
                 },
             ]
