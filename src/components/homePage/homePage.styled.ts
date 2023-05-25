@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HomePageContainerStyled = styled.div`
   width: 100%;
-  max-width: 100vw;
+  max-width: 1920px;
   min-height: 100vh;
   max-height: 100vh;
   position: relative;
@@ -12,7 +12,7 @@ export const HomePageContainerStyled = styled.div`
 `;
 
 export const VideoBGContainerStyled = styled.div`
-  width: 100vw;
+  //width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;

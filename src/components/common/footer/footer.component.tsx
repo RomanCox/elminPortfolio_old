@@ -12,7 +12,7 @@ export const Footer = ({homePage = false}: FooterPropsType) => {
 
     return (
         <FooterContainerStyled homePage={homePage}>
-            <LocationContainerStyled>
+            <LocationContainerStyled homePage={homePage}>
                 Warsaw, Poland
             </LocationContainerStyled>
             <SocialLinksContainerStyled>

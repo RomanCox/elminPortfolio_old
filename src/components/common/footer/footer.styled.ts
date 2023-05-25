@@ -3,13 +3,14 @@ import {FooterPropsType} from "./footer.component.tsx";
 
 export const FooterContainerStyled = styled.div<FooterPropsType>`
   width: 100%;
-  max-width: 100vw;
+  max-width: 1920px;
   height: 75px;
   padding: 10px 30px;
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
   display: flex;
   justify-content: space-between;

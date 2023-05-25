@@ -8,12 +8,13 @@ interface HeaderPropsType {
 
 export const HeaderContainerStyled = styled.div<HeaderPropsType>`
   width: 100%;
-  max-width: 100vw;
+  max-width: 1920px;
   height: 100px;
   padding: 15px 30px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   display: flex;
   justify-content: space-between;

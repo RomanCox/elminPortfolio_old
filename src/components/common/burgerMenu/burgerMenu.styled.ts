@@ -6,7 +6,7 @@ export const MenuContainerStyled = styled.div<{menuIsShow: boolean}>`
   height: 100vh;
   padding: 130px 30px;
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 1;

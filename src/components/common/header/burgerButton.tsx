@@ -6,21 +6,12 @@ export interface BurgerStyledPropsType {
 
 interface BurgerButtonPropsType {
     menuIsShow: boolean,
-    menuSwitch: ()=> void,
+    menuSwitch: () => void,
 }
 
-export const BurgerButton = ({menuIsShow, menuSwitch}: BurgerButtonPropsType) => {
-    // const [isBurgerMenuOpened, setIsBurgerMenuOpened] = useState<boolean>(false);
-    //
-    // const onClickHandler = () => {
-    //     setIsBurgerMenuOpened(!isBurgerMenuOpened);
-    // };
-
-    return (
-        <BurgerButtonStyled onClick={menuSwitch}>
-            <BarsStyled
-                isBurgerMenuOpened={menuIsShow}
-            />
-        </BurgerButtonStyled>
-    );
-};
+export const BurgerButton = ({menuIsShow, menuSwitch}: BurgerButtonPropsType) =>
+    <BurgerButtonStyled onClick={menuSwitch}>
+        <BarsStyled
+            isBurgerMenuOpened={menuIsShow}
+        />
+    </BurgerButtonStyled>
