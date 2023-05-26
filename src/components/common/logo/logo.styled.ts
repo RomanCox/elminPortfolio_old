@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import {LogoShowType, VariantType} from './logo.component.tsx';
 
-export const LogoContainerStyled = styled.div<{ color: VariantType }>`
+export const LogoContainerStyled = styled.div<{ color: VariantType, size: string }>`
   width: 100%;
   height: 100%;
-  padding: 0 15px;
-  border: ${({ color }) => `3px solid ${color}`};
+  border-color: ${({ color }) => `${color}`};
+  border-style: solid;
+  border-width: ${({ size }) => size === 'small' ? '2px' : '3px'};
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   box-sizing: border-box;
   font-size: 100%;
@@ -19,8 +20,8 @@ export const LogoContainerStyled = styled.div<{ color: VariantType }>`
 `;
 
 export const LogoStyled = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: auto;
   object-fit: contain;
 `;
 

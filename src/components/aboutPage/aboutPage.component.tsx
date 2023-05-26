@@ -23,12 +23,19 @@ import {
     ContentTitleContainerStyled,
     EducationContainerStyled,
     YearsStyled,
-    TextContainerStyled, TextStyled, TextBoldStyled,
+    TextContainerStyled,
+    TextStyled,
+    TextBoldStyled,
+    CVButtonBorderStyled,
+    ButtonBlockContainerStyled,
+    ButtonContainerStyled, CVDownloadMenuContainerStyled, CVDownloadStyled, DownloadMenuTitleContainer,
 } from './aboutPage.styled.ts';
+import {Modal} from '../common/modal/modal.component.tsx';
+import PictureAsPdfRoundedIcon from '@mui/icons-material/PictureAsPdfRounded';
 
 export const AboutPage = () => {
-
     const [activeChapter, setActiveChapter] = useState<string>('Education');
+    const [modalIsShow, setModalIsShow] = useState<boolean>(false);
 
     const context = useAboutPageState();
 
@@ -40,8 +47,32 @@ export const AboutPage = () => {
         setActiveChapter(value);
     }
 
+    const openModal = () => {
+        setModalIsShow(true);
+    }
+
+
+    const closeModal = () => {
+        setModalIsShow(false);
+    }
+
     return (
         <AboutPageContainerStyled>
+            {modalIsShow && <Modal closeModal={closeModal} modalActive={modalIsShow}>
+                <CVDownloadMenuContainerStyled>
+                    <DownloadMenuTitleContainer>
+                        <Title variant='h2' color='#fff' text='Choose CV' />
+                    </DownloadMenuTitleContainer>
+                    <CVDownloadStyled href='/assets/files/CV_ELmin_eng.pdf' download>
+                        <PictureAsPdfRoundedIcon/>
+                        Download English CV
+                    </CVDownloadStyled>
+                    <CVDownloadStyled href='/assets/files/CV_ELmin_rus.pdf' download>
+                        <PictureAsPdfRoundedIcon/>
+                        Download Russian CV
+                    </CVDownloadStyled>
+                </CVDownloadMenuContainerStyled>
+            </Modal>}
             <Header/>
             <NavigationContainerStyled>
                 <TitleContainerStyled>
@@ -56,10 +87,9 @@ export const AboutPage = () => {
                             <NavigationItemStyled key={chapter}
                                                   isActive={chapter === activeChapter}
                                                   onClick={() => chooseChapter(chapter)}>
-                                {chapter}
+                                <div>{chapter}</div>
                             </NavigationItemStyled>)
                         }
-                        <CVButtonStyled>Download CV</CVButtonStyled>
                     </NavigationStyled>
                     <DescriptionContainerStyled>
                         {context.description.map(text => <DescriptionStyled key={text}>
@@ -67,6 +97,17 @@ export const AboutPage = () => {
                         </DescriptionStyled>)}
                     </DescriptionContainerStyled>
                 </ChaptersStyled>
+                <ButtonBlockContainerStyled>
+                    <ButtonContainerStyled>
+                        <CVButtonStyled onClick={openModal}>
+                            <CVButtonBorderStyled width='175px' height='40px' viewBox='0 0 175 40'>
+                                <polyline points='1,39 174,39 174,1 1,1 1,39'/>
+                            </CVButtonBorderStyled>
+                            {/*<div>Download CV</div>*/}
+                            Download CV
+                        </CVButtonStyled>
+                    </ButtonContainerStyled>
+                </ButtonBlockContainerStyled>
                 <BottomLineStyled/>
             </NavigationContainerStyled>
             <ContentContainerStyled>

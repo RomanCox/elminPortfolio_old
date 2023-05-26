@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {BurgerStyledPropsType} from './burgerButton.tsx';
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 
 interface HeaderPropsType {
     homePage?: boolean,
@@ -9,8 +9,8 @@ interface HeaderPropsType {
 export const HeaderContainerStyled = styled.div<HeaderPropsType>`
   width: 100%;
   max-width: 1920px;
-  height: 100px;
-  padding: 15px 30px;
+  padding: 20px 30px 15px;
+  padding-right: ${({homePage}) => homePage ? '30px' : '0'};
   position: fixed;
   top: 0;
   left: 50%;
@@ -18,7 +18,7 @@ export const HeaderContainerStyled = styled.div<HeaderPropsType>`
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  align-items: ${({homePage = false}) => homePage ? 'center' : 'flex-end'};
+  align-items: ${({homePage}) => homePage ? 'center' : 'flex-end'};
   box-sizing: border-box;
 `;
 
@@ -150,7 +150,7 @@ export const NavbarItemStyled = styled(NavLink)`
     height: 2px;
     position: absolute;
     bottom: -15px;
-    left: -5%;
+    left: 0;
     z-index: 1;
     background: #000;
     transition: all 0.25s ease-in-out 0s;
@@ -160,12 +160,16 @@ export const NavbarItemStyled = styled(NavLink)`
     color: #000;
     
     &:after {
-      width: 110%;
+      width: 103%;
     }
   }
 
   &:visited {
     color: #000;
+  }
+  
+  &:last-child {
+    padding-right: 30px;
   }
 `;
 

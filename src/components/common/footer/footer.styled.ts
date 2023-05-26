@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {FooterPropsType} from "./footer.component.tsx";
+import {FooterPropsType} from './footer.component.tsx';
 
 export const FooterContainerStyled = styled.div<FooterPropsType>`
   width: 100%;

@@ -23,7 +23,7 @@ export const Header = (
 ) => {
 
     return (
-        <HeaderContainerStyled>
+        <HeaderContainerStyled homePage={homePage}>
             {homePage
                 ? <>
                     <BurgerButtonContainerStyled>

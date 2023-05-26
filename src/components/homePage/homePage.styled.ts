@@ -34,7 +34,6 @@ export const BlackoutStyled = styled.div`
 `;
 
 export const ContentContainerStyled = styled.div`
-  width: 750px;
   height: 200px;
   padding: 0 10px;
   box-sizing: border-box;

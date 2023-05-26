@@ -33,7 +33,7 @@ export const Logo = ({variant, size = 'small', homePage = false}: LogoPropsType)
 	}, []);
 
 	return (
-		<LogoContainerStyled color={variant}>
+		<LogoContainerStyled color={variant} size={size}>
 			<LogoStyled src={variant === 'black' ? logoBlack : logoWhite}/>
 			<AfterBlockStyled show={show} color={variant} size={size} homePage={homePage}>
 				{show && <span>CG ARTIST</span>}
