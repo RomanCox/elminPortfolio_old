@@ -103,7 +103,6 @@ export const AboutPage = () => {
                             <CVButtonBorderStyled width='175px' height='40px' viewBox='0 0 175 40'>
                                 <polyline points='1,39 174,39 174,1 1,1 1,39'/>
                             </CVButtonBorderStyled>
-                            {/*<div>Download CV</div>*/}
                             Download CV
                         </CVButtonStyled>
                     </ButtonContainerStyled>
