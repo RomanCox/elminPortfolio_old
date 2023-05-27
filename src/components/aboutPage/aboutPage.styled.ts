@@ -62,16 +62,17 @@ export const CVDownloadStyled = styled.a`
 export const NavigationContainerStyled = styled.div`
   width: 100%;
   height: 300px;
-  padding: 50px;
+  padding: 50px 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 40px;
   position: relative;
   box-sizing: border-box;
 `;
 
 export const TitleContainerStyled = styled.div`
-  width: 225px;
+  width: 200px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
@@ -116,18 +117,16 @@ export const ChaptersStyled = styled.div`
 `;
 
 export const NavigationStyled = styled.div`
-  width: 100%;
   height: 60px;
   padding-left: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 150px;
 `;
 
 export const NavigationItemStyled = styled.div<{isActive: boolean}>`
-  width: 175px;
   height: 50px;
   display: flex;
   align-items: center;

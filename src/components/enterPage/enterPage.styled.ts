@@ -125,7 +125,6 @@ export const DescriptionContainerStyled = styled.div`
   text-align: start;
 
   @media screen and (max-width: 879px) {
-    //width: 80%;
     font-size: 16px;
     line-height: 19px;
     text-align: center;

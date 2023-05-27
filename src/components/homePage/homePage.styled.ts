@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Button} from "@mui/material";
 
 export const HomePageContainerStyled = styled.div`
   width: 100%;
@@ -12,7 +13,6 @@ export const HomePageContainerStyled = styled.div`
 `;
 
 export const VideoBGContainerStyled = styled.div`
-  //width: 100vw;
   height: 100vh;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
@@ -79,10 +79,20 @@ export const ServicesListContainer = styled.div`
   }
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonStyled = styled(Button)`
   width: 200px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2) !important;
   color: #fff;
-  border-radius: 5px;
+  font-family: Libre Franklin, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+  text-align: justify !important;
+  
+  &:hover, &:active, &:focus {
+    color: #fff;
+    outline: none;
+    border: none;
+  }
 `;

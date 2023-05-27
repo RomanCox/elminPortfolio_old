@@ -14,7 +14,7 @@ export const MenuContainerStyled = styled.div<{menuIsShow: boolean}>`
   justify-content: flex-start;
   align-items: flex-start;
   opacity: ${({menuIsShow}) => menuIsShow ? '1' : '0'};
-  //transform: ${({menuIsShow}) => menuIsShow ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({menuIsShow}) => menuIsShow ? 'translateX(0)' : 'translateX(-100%)'};
   transition: all 0.5s ease-in-out 0s;
 `;
 
