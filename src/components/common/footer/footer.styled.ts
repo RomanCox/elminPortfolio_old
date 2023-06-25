@@ -15,11 +15,11 @@ export const FooterContainerStyled = styled.div<FooterPropsType>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: ${({ homePage }) => homePage ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
+  background: ${({ $homePage }) => $homePage ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
 `;
 
 export const LocationContainerStyled = styled.div<FooterPropsType>`
-  color: ${({ homePage }) => homePage ? '#fff' : '#000'};
+  color: ${({ $homePage }) => $homePage ? '#fff' : '#000'};
   font-family: Libre Franklin, sans-serif;
   font-size: 20px;
   line-height: 24px;

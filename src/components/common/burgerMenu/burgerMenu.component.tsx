@@ -10,7 +10,7 @@ interface BurgerMenuPropsType {
 }
 
 export const BurgerMenu = ({menuIsShow}: BurgerMenuPropsType) =>
-    <MenuContainerStyled menuIsShow={menuIsShow}>
+    <MenuContainerStyled $menuIsShow={menuIsShow}>
         <NavbarStyled>
             <NavbarItemStyled to={PATH.ABOUT}>
                 About

@@ -1,7 +1,7 @@
 import {BarsStyled, BurgerButtonStyled} from './header.styled.ts';
 
 export interface BurgerStyledPropsType {
-    isBurgerMenuOpened: boolean,
+    $isBurgerMenuOpened: boolean,
 }
 
 interface BurgerButtonPropsType {
@@ -12,6 +12,6 @@ interface BurgerButtonPropsType {
 export const BurgerButton = ({menuIsShow, menuSwitch}: BurgerButtonPropsType) =>
     <BurgerButtonStyled onClick={menuSwitch}>
         <BarsStyled
-            isBurgerMenuOpened={menuIsShow}
+            $isBurgerMenuOpened={menuIsShow}
         />
     </BurgerButtonStyled>

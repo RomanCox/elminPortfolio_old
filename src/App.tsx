@@ -8,6 +8,7 @@ import {HomePage} from './components/homePage/homePage.component.tsx';
 import {AboutPage} from './components/aboutPage/aboutPage.component.tsx';
 import {AdminLayoutPage} from './components/adminPage/adminLayoutPage.component.tsx';
 import {AboutContextProvider} from './state/aboutPage';
+import {ContactContextProvider} from "./state/contacts";
 
 export const PATH = {
     EMPTY: '/',
@@ -42,14 +43,18 @@ export const App = () => {
             <Route
                 path={PATH.HOME}
                 element={
-                    <HomePage/>
+                    <ContactContextProvider>
+                        <HomePage/>
+                    </ContactContextProvider>
                 }
             />
             <Route
                 path={PATH.ABOUT}
                 element={
                     <AboutContextProvider>
-                        <AboutPage/>
+                        <ContactContextProvider>
+                            <AboutPage/>
+                        </ContactContextProvider>
                     </AboutContextProvider>
                 }
             />
@@ -59,30 +64,6 @@ export const App = () => {
                     <AdminLayoutPage/>
                 }
             />
-            {/*<Route*/}
-            {/*    path={PATH.PORTFOLIO}*/}
-            {/*    element={*/}
-            {/*        <Portfolio/>*/}
-            {/*    }*/}
-            {/*/>*/}
-            {/*<Route*/}
-            {/*    path={PATH.SERVICE}*/}
-            {/*    element={*/}
-            {/*        <Service/>*/}
-            {/*    }*/}
-            {/*/>*/}
-            {/*<Route*/}
-            {/*    path={PATH.CONTACT}*/}
-            {/*    element={*/}
-            {/*        <Contacts/>*/}
-            {/*    }*/}
-            {/*/>*/}
-            {/*<Route*/}
-            {/*    path='*'*/}
-            {/*    element={*/}
-            {/*        <Error404/>*/}
-            {/*    }*/}
-            {/*/>*/}
         </Routes>
     );
 };

@@ -34,11 +34,18 @@ const aboutPage = {
                     id: uuidv4(),
                     year: '2021-2022',
                     title: 'School Dviz',
+                    // description: [
+                    //     'Online Course "Unreal Engine 4 For Archviz"\n' +
+                    //     'Online Course "Unreal Engine 5 For Archviz"\n' +
+                    //     'Online Course "Essential Blueprints for Archviz"\n' +
+                    //     'Online Course "Marvelous designer for archviz"\n' +
+                    //     'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs'
+                    // ],
                     description: [
-                        'Online Course "Unreal Engine 4 For Archviz"\n' +
-                        'Online Course "Unreal Engine 5 For Archviz"\n' +
-                        'Online Course "Essential Blueprints for Archviz"\n' +
-                        'Online Course "Marvelous designer for archviz"\n' +
+                        'Online Course "Unreal Engine 4 For Archviz',
+                        'Online Course "Unreal Engine 5 For Archviz',
+                        'Online Course "Essential Blueprints for Archviz',
+                        'Online Course "Marvelous designer for Archviz',
                         'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs'
                     ],
                 },
@@ -74,7 +81,7 @@ interface AboutChapterItemType {
     description: Array<string>,
 }
 
-interface AboutChapterType {
+export interface AboutChapterType {
     id: string,
     label: string,
     items: Array<AboutChapterItemType>
@@ -85,18 +92,6 @@ export interface AboutPageContextType {
     title: string,
     description: Array<string>,
     chapters: Array<AboutChapterType>,
-}
-
-export const AboutContextProvider = ({children}: ContextProviderPropsType) => {
-    const [state, dispatch] = useReducer(aboutReducer, aboutPage);
-
-    return (
-        <AboutStateContext.Provider value={state}>
-            <AboutDispatchContext.Provider value={dispatch}>
-                {children}
-            </AboutDispatchContext.Provider>
-        </AboutStateContext.Provider>
-    )
 }
 
 export const useAboutPageState = () => {
@@ -113,4 +108,16 @@ export const useAboutPageDispatch = () => {
         throw new Error('useCountDispatch must be used within a CountProvider')
     }
     return context
+}
+
+export const AboutContextProvider = ({children}: ContextProviderPropsType) => {
+    const [state, dispatch] = useReducer(aboutReducer, aboutPage);
+
+    return (
+        <AboutStateContext.Provider value={state}>
+            <AboutDispatchContext.Provider value={dispatch}>
+                {children}
+            </AboutDispatchContext.Provider>
+        </AboutStateContext.Provider>
+    )
 }

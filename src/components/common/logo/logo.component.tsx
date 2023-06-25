@@ -11,10 +11,10 @@ import logoWhite from '../../../assets/images/elmin_logo_white.webp';
 export type VariantType = 'black' | 'white';
 
 export interface LogoShowType {
-	show: boolean,
+	$show: boolean,
 	color: VariantType,
 	size: string,
-	homePage: boolean,
+	$homePage: boolean,
 }
 
 export type LogoPropsType = {
@@ -35,7 +35,7 @@ export const Logo = ({variant, size = 'small', homePage = false}: LogoPropsType)
 	return (
 		<LogoContainerStyled color={variant} size={size}>
 			<LogoStyled src={variant === 'black' ? logoBlack : logoWhite}/>
-			<AfterBlockStyled show={show} color={variant} size={size} homePage={homePage}>
+			<AfterBlockStyled $show={show} color={variant} size={size} $homePage={homePage}>
 				{show && <span>CG ARTIST</span>}
 			</AfterBlockStyled>
 		</LogoContainerStyled>

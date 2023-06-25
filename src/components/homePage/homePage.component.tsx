@@ -38,7 +38,7 @@ export const HomePage = () => {
 					Contact me
 				</ButtonStyled>
 			</ContentContainerStyled>
-			<Footer homePage/>
+			<Footer $homePage/>
 		</HomePageContainerStyled>
 	);
 };

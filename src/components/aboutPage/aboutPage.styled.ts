@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type NavigationItemStyledPropsType = {
+    $isActive: boolean,
+}
+
 export const AboutPageContainerStyled = styled.div`
   width: 100%;
   height: 100vh;
@@ -126,15 +130,15 @@ export const NavigationStyled = styled.div`
   gap: 150px;
 `;
 
-export const NavigationItemStyled = styled.div<{isActive: boolean}>`
+export const NavigationItemStyled = styled.a<NavigationItemStyledPropsType>`
   height: 50px;
   display: flex;
   align-items: center;
   position: relative;
   font-family: Libre Franklin, sans-serif;
-  font-size: ${({ isActive }) => isActive ? '32px' : '24px'};
+  font-size: ${({ $isActive }) => $isActive ? '32px' : '24px'};
   line-height: 120%;
-  font-weight: ${({ isActive }) => isActive ? '700' : '500'};
+  font-weight: ${({ $isActive }) => $isActive ? '700' : '500'};
   text-align: center;
   user-select: none;
   cursor: pointer;
@@ -164,14 +168,16 @@ export const ButtonContainerStyled = styled.div`
 `;
 
 export const CVButtonStyled = styled.button`
-  width: 175px;
+  //width: 175px;
+  width: 100px;
   height: 40px;
   padding: 0;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  gap: 15px;
+  background: transparent;
   border: none;
   border-radius: 0;
   color: #000;
@@ -206,8 +212,8 @@ export const CVButtonBorderStyled = styled.svg`
   top: 0;
   fill: transparent;
   stroke: #000;
-  stroke-dasharray: 430;
-  stroke-dashoffset: 430;
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
   transition: 0.5s ease-in-out;
 
   &:hover {
@@ -244,9 +250,32 @@ export const BottomLineStyled = styled.div`
   background: #CDCCD7;
 `;
 
+// export const ContentContainerStyled = styled.div`
+//   width: 100%;
+//   padding-left: 450px;
+//   box-sizing: border-box;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: flex-start;
+//   gap: 50px;
+// `;
+
+export const AllContentContainerStyled = styled.div`
+  width: 100%;
+  padding: 0 30px 0 450px;
+  // padding-left: 450px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+  overflow: auto;
+`;
+
 export const ContentContainerStyled = styled.div`
   width: 100%;
-  padding-left: 450px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -309,4 +338,13 @@ export const TextStyled = styled.div`
 
 export const TextBoldStyled = styled(TextStyled)`
   font-weight: 700;
+`;
+
+export const DescriptionsContainerStyled = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
 `;

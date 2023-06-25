@@ -32,7 +32,7 @@ export const AfterBlockStyled = styled.div<LogoShowType>`
   color: #000;
   position: absolute;
   left: 50%;
-  bottom: ${({size, homePage}) => size === 'large' || homePage ? '-10%' : '-12%'};
+  bottom: ${({size, $homePage}) => size === 'large' || $homePage ? '-10%' : '-12%'};
   transform: translateX(-50%);
   font-family: Libre Franklin, sans-serif;
   font-size: 100%;
@@ -44,7 +44,7 @@ export const AfterBlockStyled = styled.div<LogoShowType>`
   animation: expanding 0.5s ease 1.5s forwards;
 
   span {
-    opacity: ${({ show }) => show ? '1' : 0};
+    opacity: ${({ $show }) => $show ? '1' : 0};
     transition: opacity 0.5s ease 0s;
   }
 

@@ -14,22 +14,20 @@ interface HeaderPropsType {
     homePage?: boolean,
 }
 
-export const Header = (
-    {
-        menuIsShow = false, menuSwitch = () => {
-        console.log('empty function')
-    }, homePage = false
-    }: HeaderPropsType
-) => {
+export const Header = ({
+                           menuIsShow = false,
+                           menuSwitch = () => console.log('empty function'),
+                           homePage = false
+                       }: HeaderPropsType) => {
 
     return (
-        <HeaderContainerStyled homePage={homePage}>
+        <HeaderContainerStyled $homePage={homePage}>
             {homePage
                 ? <>
                     <BurgerButtonContainerStyled>
                         <BurgerButton menuIsShow={menuIsShow} menuSwitch={menuSwitch}/>
                     </BurgerButtonContainerStyled>
-                    <LogoContainerStyled homePage>
+                    <LogoContainerStyled $homePage>
                         <Logo variant='white' homePage/>
                     </LogoContainerStyled>
                     <SocialLinksAndLangContainerStyled>

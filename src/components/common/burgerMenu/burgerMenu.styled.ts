@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const MenuContainerStyled = styled.div<{menuIsShow: boolean}>`
+interface MenuContainerStyledPropsType {
+    $menuIsShow: boolean,
+}
+
+export const MenuContainerStyled = styled.div<MenuContainerStyledPropsType>`
   width: 400px;
   height: 100vh;
   padding: 130px 30px;
@@ -13,8 +17,8 @@ export const MenuContainerStyled = styled.div<{menuIsShow: boolean}>`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  opacity: ${({menuIsShow}) => menuIsShow ? '1' : '0'};
-  transform: ${({menuIsShow}) => menuIsShow ? 'translateX(0)' : 'translateX(-100%)'};
+  opacity: ${({ $menuIsShow }) => $menuIsShow ? '1' : '0'};
+  transform: ${({ $menuIsShow }) => $menuIsShow ? 'translateX(0)' : 'translateX(-100%)'};
   transition: all 0.5s ease-in-out 0s;
 `;
 

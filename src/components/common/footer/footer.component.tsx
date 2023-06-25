@@ -5,18 +5,18 @@ import {
 import {IconSet} from '../iconSet/iconSet.component.tsx';
 
 export interface FooterPropsType {
-    homePage?: boolean
+    $homePage?: boolean
 }
 
-export const Footer = ({homePage = false}: FooterPropsType) => {
+export const Footer = ({$homePage = false}: FooterPropsType) => {
 
     return (
-        <FooterContainerStyled homePage={homePage}>
-            <LocationContainerStyled homePage={homePage}>
+        <FooterContainerStyled $homePage={$homePage}>
+            <LocationContainerStyled $homePage={$homePage}>
                 Warsaw, Poland
             </LocationContainerStyled>
             <SocialLinksContainerStyled>
-                {homePage ? 'Portfolio'
+                {$homePage ? 'Portfolio'
                     : <IconSet/>
                 }
             </SocialLinksContainerStyled>

@@ -1,6 +1,5 @@
 export const BehanceIcon = () => {
     return (
-        // <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"
              width="20px" height="20px">
             <rect x="21.387" y="8.462" width="6.906" height="1.682"/>
