@@ -1,11 +1,11 @@
 import {useEffect, useRef} from 'react';
 
-import {Title} from '../common/title/title.component.tsx';
+import {Title} from '../common/title/Title.component.tsx';
 
 import {
     ContentContainerStyled, ContentTitleContainerStyled, EducationContainerStyled,
     YearsStyled, TextContainerStyled, TextBoldStyled, DescriptionsContainerStyled, TextStyled,
-} from './aboutPage.styled.ts';
+} from './AboutPage.styled.ts';
 
 import {AboutChapterType} from "../../state/aboutPage/contextProvider.tsx";
 

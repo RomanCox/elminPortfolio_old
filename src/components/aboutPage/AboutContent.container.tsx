@@ -1,4 +1,4 @@
-import {AllContentContainerStyled} from './aboutPage.styled.ts';
+import {AllContentContainerStyled} from './AboutPage.styled.ts';
 
 import {useAboutPageState} from '../../state/aboutPage';
 import {AboutContent} from "./AboutContent.component.tsx";

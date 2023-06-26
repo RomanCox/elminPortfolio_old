@@ -1,6 +1,6 @@
-import {Title} from '../common/title/title.component.tsx';
+import {Title} from '../common/title/Title.component.tsx';
 
-import { DownloadMenuTitleContainer, CVDownloadStyled, CVDownloadMenuContainerStyled, } from './aboutPage.styled.ts';
+import { DownloadMenuTitleContainer, CVDownloadStyled, CVDownloadMenuContainerStyled, } from './AboutPage.styled.ts';
 import PictureAsPdfRoundedIcon from "@mui/icons-material/PictureAsPdfRounded";
 
 export const DownloadCV = () => {

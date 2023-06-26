@@ -1,15 +1,13 @@
-// import {useState} from 'react';
-
 import {useAboutPageState} from '../../state/aboutPage';
-import {Title} from '../common/title/title.component.tsx';
+import {Title} from '../common/title/Title.component.tsx';
 import {DownloadIcon} from '../../assets/icons/downloadIcon.tsx';
-import photo from '../../assets/images/avatar.webp';
+import photo from '../../assets/images/photo/avatar.webp';
 
 import {
-    NavigationStyled, NavigationItemStyled, DescriptionContainerStyled, DescriptionStyled, ChaptersStyled,
+    NavigationStyled, NavigationItemStyled, DescriptionContainerStyled, ChaptersStyled,
     TitleContainerStyled, ImageContainer, ImageStyled, ButtonBlockContainerStyled, ButtonContainerStyled,
     CVButtonStyled, CVButtonBorderStyled, BottomLineStyled, NavigationContainerStyled,
-} from './aboutPage.styled.ts';
+} from './AboutPage.styled.ts';
 
 
 interface AboutNavigationPropsType {
@@ -18,17 +16,10 @@ interface AboutNavigationPropsType {
     openModal: () => void,
 }
 
-export const AboutNavigation = ({ activeChapter, chooseChapter, openModal }: AboutNavigationPropsType) => {
-    //const [activeChapter, setActiveChapter] = useState<string>('Education');
-
+export const AboutNavigation = ({activeChapter, chooseChapter, openModal}: AboutNavigationPropsType) => {
     const context = useAboutPageState();
 
     const navigationChapters = context.chapters.map(chapter => chapter.label);
-
-    // const chooseChapter = (value: string) => {
-    //     setActiveChapter(value);
-    //     value.scrollIntoView({behavior: 'smooth', block: 'start'})
-    // };
 
     return (
         <NavigationContainerStyled>
@@ -41,18 +32,19 @@ export const AboutNavigation = ({ activeChapter, chooseChapter, openModal }: Abo
             <ChaptersStyled>
                 <NavigationStyled>
                     {navigationChapters.map(chapter =>
-                        <NavigationItemStyled key={chapter}
-                                              href={`#${chapter}`}
-                                              $isActive={chapter === activeChapter}
-                                              onClick={() => chooseChapter(chapter)}>
+                        <NavigationItemStyled
+                            key={chapter}
+                            $isActive={chapter === activeChapter}
+                            onClick={() => chooseChapter(chapter)}
+                        >
                             <div>{chapter}</div>
                         </NavigationItemStyled>)
                     }
                 </NavigationStyled>
                 <DescriptionContainerStyled>
-                    {context.description.map(text => <DescriptionStyled key={text}>
+                    {context.description.map(text => <div key={text}>
                         {text}
-                    </DescriptionStyled>)}
+                    </div>)}
                 </DescriptionContainerStyled>
             </ChaptersStyled>
             <ButtonBlockContainerStyled>

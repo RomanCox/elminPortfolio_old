@@ -11,62 +11,75 @@ export type DispatchType = (action: ActionsType) => void;
 export const ContactsStateContext = createContext<ContactsContextType | undefined>(undefined);
 export const ContactsDispatchContext = createContext<DispatchType | undefined>(undefined);
 
-const contacts = [
-    {
-        id: uuidv4(),
-        title: 'linkedin',
-        icon: '',
-        link: 'https://www.linkedin.com/in/elminkaraev',
-    },
-    {
-        id: uuidv4(),
-        title: 'telegram',
-        icon: '',
-        link: 'https://t.me/karaevelmin',
-    },
-    {
-        id: uuidv4(),
-        title: 'instagram',
-        icon: '',
-        link: 'https://www.instagram.com/karaevelmin',
-    },
-    {
-        id: uuidv4(),
-        title: 'behance',
-        icon: '',
-        link: 'https://www.behance.net/elminkaraev',
-    },
-    {
-        id: uuidv4(),
-        title: 'facebook',
-        icon: '',
-        link: 'https://www.facebook.com/profile.php?id=100080225493177',
-    },
-    {
-        id: uuidv4(),
-        title: 'youtube',
-        icon: '',
-        link: 'https://www.youtube.com/channel/UC3w6lpvEkOH6LDl0m_YJrUw',
-    },
-    {
-        id: uuidv4(),
-        title: 'viber',
-        icon: '',
-        link: '+375445989809',
-    },
-    {
-        id: uuidv4(),
-        title: 'whatsapp',
-        icon: '',
-        link: '+375445989809',
-    },
-    {
-        id: uuidv4(),
-        title: 'email',
-        icon: '',
-        link: 'karaevelmin@gmail.com',
-    },
-]
+const contacts = {
+    id: uuidv4(),
+    title: 'Contacts',
+    photo: '../src/assets/images/photo/avatar.webp',
+    socials: [
+        {
+            id: uuidv4(),
+            title: 'LinkedIn',
+            icon: '../src/assets/icons/linkedin.webp',
+            link: 'https://www.linkedin.com/in/elminkaraev',
+        },
+        {
+            id: uuidv4(),
+            title: 'Telegram',
+            icon: '../src/assets/icons/telegram.webp',
+            link: 'https://t.me/karaevelmin',
+        },
+        {
+            id: uuidv4(),
+            title: 'Instagram',
+            icon: '../src/assets/icons/instagram.webp',
+            link: 'https://www.instagram.com/karaevelmin',
+        },
+        {
+            id: uuidv4(),
+            title: 'Behance',
+            icon: '../src/assets/icons/behance.webp',
+            link: 'https://www.behance.net/elminkaraev',
+        },
+        {
+            id: uuidv4(),
+            title: 'Youtube',
+            icon: '../src/assets/icons/youtube.webp',
+            link: 'https://www.youtube.com/channel/UC3w6lpvEkOH6LDl0m_YJrUw',
+        },
+    ],
+    contacts: [
+        {
+            id: uuidv4(),
+            title: 'Location',
+            icon: '',
+            link: 'Warsaw, Poland',
+        },
+        {
+            id: uuidv4(),
+            title: 'Email',
+            icon: '',
+            link: 'karaevelmin@gmail.com',
+        },
+        {
+            id: uuidv4(),
+            title: 'Phone | Whatsapp | Viber',
+            icon: '',
+            link: '+375445989809',
+        },
+        {
+            id: uuidv4(),
+            title: 'Telegram',
+            icon: '../src/assets/icons/telegram.webp',
+            link: 'https://t.me/karaevelmin',
+        },
+        {
+            id: uuidv4(),
+            title: 'Facebook',
+            icon: '../src/assets/icons/facebook.webp',
+            link: 'https://www.facebook.com/profile.php?id=100080225493177',
+        },
+    ],
+}
 
 interface ContactType {
     id: string,
@@ -75,7 +88,13 @@ interface ContactType {
     link: string,
 }
 
-export type ContactsContextType = Array<ContactType>;
+export type ContactsContextType = {
+    id: string,
+    title: string,
+    photo: string,
+    socials: Array<ContactType>,
+    contacts: Array<ContactType>,
+};
 
 export const ContactContextProvider = ({children}: ContextProviderPropsType) => {
     const [state, dispatch] = useReducer(contactReducer, contacts);
