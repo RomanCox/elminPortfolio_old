@@ -80,12 +80,9 @@ export const NavigationContainerStyled = styled.div`
 `;
 
 export const TitleContainerStyled = styled.div`
-  width: 200px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
-  //position: absolute;
-  //top: 18px;
   position: relative;
   font-family: Libre Franklin, sans-serif;
   font-size: 56px;
@@ -117,7 +114,7 @@ export const ImageStyled = styled.img`
 export const ChaptersStyled = styled.div`
   width: calc(100% - 140px);
   height: 100%;
-  padding-left: 384px;
+  padding-left: 174px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -126,11 +123,11 @@ export const ChaptersStyled = styled.div`
   gap: 20px;
 
   @media screen and (max-width: 1920px) {
-    padding-left: 20vw;
+    padding-left: calc(20vw - 210px);
   }
 
   @media screen and (max-width: 1279px) {
-    padding-left: 30vw;
+    padding-left: calc(30vw - 210px);;
   }
 `;
 
