@@ -4,7 +4,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Card from '@mui/material/Card';
-import {Box, Button, Dialog} from '@mui/material';
+import {Box} from '@mui/material';
 
 export const Accordion = styled(MuiAccordion)`
   border: 1px solid rgba(255, 255, 255, 0.12);

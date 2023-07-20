@@ -10,7 +10,7 @@ import {AdminLayoutPage} from './components/adminPage/AdminLayoutPage.component.
 import {AboutContextProvider} from './state/aboutPage';
 import {ContactsPageContextProvider} from './state/contactsPage';
 import {ContactsPage} from './components/contactsPage/ContactsPage.component.tsx';
-import {HomePageContextProvider} from './state/homePage/contextProvider.tsx';
+import {HomePageContextProvider} from './state/homePage';
 
 export const PATH = {
     EMPTY: '/',
