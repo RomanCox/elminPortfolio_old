@@ -11,6 +11,10 @@ import {AboutContextProvider} from './state/aboutPage';
 import {ContactsPageContextProvider} from './state/contactsPage';
 import {ContactsPage} from './components/contactsPage/ContactsPage.component.tsx';
 import {HomePageContextProvider} from './state/homePage';
+import {PortfolioPageContextProvider} from './state/portfolioPage';
+import {PortfolioPage} from './components/portfolioPage/PortfolioPage.component.tsx';
+import {ServicesPageContextProvider} from './state/servicesPage';
+import {ServicesPage} from './components/servicesPage/ServicesPage.component.tsx';
 
 export const PATH = {
     EMPTY: '/',
@@ -60,6 +64,26 @@ export const App = () => {
                             <AboutPage/>
                         </ContactsPageContextProvider>
                     </AboutContextProvider>
+                }
+            />
+            <Route
+                path={PATH.PORTFOLIO}
+                element={
+                    <PortfolioPageContextProvider>
+                        <ContactsPageContextProvider>
+                            <PortfolioPage/>
+                        </ContactsPageContextProvider>
+                    </PortfolioPageContextProvider>
+                }
+            />
+            <Route
+                path={PATH.SERVICES}
+                element={
+                    <ServicesPageContextProvider>
+                        <ContactsPageContextProvider>
+                            <ServicesPage/>
+                        </ContactsPageContextProvider>
+                    </ServicesPageContextProvider>
                 }
             />
             <Route

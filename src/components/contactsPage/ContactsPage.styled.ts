@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContactsPageContainerStyled = styled.div`
   width: 100%;
   height: 100vh;
-  padding-top: 85px;
+  padding: 75px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const ContactsPageContainerStyled = styled.div`
 
 export const TitleContainerStyled = styled.div`
   width: 100%;
-  padding: 30px 30px 50px 45px;
+  padding: 30px 30px 50px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;

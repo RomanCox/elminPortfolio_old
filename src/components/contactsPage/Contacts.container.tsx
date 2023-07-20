@@ -39,7 +39,7 @@ export const Contacts = () => {
                 </ContactsTitleContainerStyled>
                 <ContactsContainerStyled>
                     {context.contacts.map(contact =>
-                        <ContactContainerStyled>
+                        <ContactContainerStyled key={contact.id}>
                             <ContactLabelStyled>
                                 {contact.title === 'Location' ? <LocationOnOutlinedIcon/>
                                     : contact.title === 'Email' ? <EmailIcon/>

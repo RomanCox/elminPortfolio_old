@@ -1,24 +1,22 @@
-import {useContactsPageState} from '../../state/contactsPage';
+import {usePortfolioPageState} from '../../state/portfolioPage';
 
 import {Header} from '../common/header/Header.component.tsx';
 import {Footer} from '../common/footer/Footer.component.tsx';
 
-import {ContactsPageContainerStyled, TitleContainerStyled} from './ContactsPage.styled.ts';
+import {PortfolioPageContainerStyled, TitleContainerStyled} from './PortfolioPage.styled.ts';
 import {Title} from '../common/title/Title.component.tsx';
-import {Contacts} from './Contacts.container.tsx';
 
-
-export const ContactsPage = () => {
-    const context = useContactsPageState();
+export const PortfolioPage = () => {
+    const context = usePortfolioPageState();
+    console.log(context)
 
     return (
-        <ContactsPageContainerStyled>
+        <PortfolioPageContainerStyled>
             <Header/>
             <TitleContainerStyled>
                 <Title variant='h1' color='#000' text={context.title}/>
             </TitleContainerStyled>
-            <Contacts/>
             <Footer/>
-        </ContactsPageContainerStyled>
+        </PortfolioPageContainerStyled>
     );
 };

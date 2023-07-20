@@ -84,8 +84,9 @@ export const TitleContainerStyled = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
-  position: absolute;
-  top: 18px;
+  //position: absolute;
+  //top: 18px;
+  position: relative;
   font-family: Libre Franklin, sans-serif;
   font-size: 56px;
   line-height: 67px;
