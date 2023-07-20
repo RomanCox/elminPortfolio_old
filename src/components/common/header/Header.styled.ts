@@ -7,7 +7,7 @@ interface HeaderPropsType {
 }
 
 export const HeaderContainerStyled = styled.div<HeaderPropsType>`
-  width: 100%;
+  width: 100vw;
   max-width: 1920px;
   padding: ${({ $homePage }) => $homePage ? '20px 30px 15px' : '20px 0 15px 30px'};
   position: fixed;
@@ -99,10 +99,10 @@ export const SocialLinksAndLangContainerStyled = styled.div`
 `;
 
 export const SocialLinksContainerStyled = styled.div`
-  width: 150px;
   height: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 `;
 
 export const LangContainerStyled = styled.div`
@@ -174,6 +174,10 @@ export const NavbarItemStyled = styled(NavLink)`
   
   &:last-child {
     padding-right: 30px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    padding: 0 20px;
   }
 `;
 

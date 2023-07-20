@@ -1,14 +1,49 @@
 import { v4 as uuidv4 } from 'uuid';
 import {AboutPageContextType} from './contextProvider.tsx';
 
-enum ActionPoints {
-    ADD_EDUCATION = "SET_EDUCATION",
-    REMOVE_EDUCATION = "REMOVE_EDUCATION",
-    UPDATE_EDUCATION = "UPDATE_EDUCATION"
+export enum ActionPoints {
+    ADD_NAVIGATION_CHAPTER = 'ADD_NAVIGATION_CHAPTER',
+    REMOVE_NAVIGATION_CHAPTER = 'REMOVE_NAVIGATION_CHAPTER',
+    UPDATE_NAVIGATION_CHAPTER = 'UPDATE_NAVIGATION_CHAPTER',
+    ADD_EDUCATION = 'ADD_EDUCATION',
+    REMOVE_EDUCATION = 'REMOVE_EDUCATION',
+    UPDATE_EDUCATION = 'UPDATE_EDUCATION',
 }
 
 export const aboutReducer = (state: AboutPageContextType, action: ActionsType) => {
     switch (action.type) {
+        case ActionPoints.ADD_NAVIGATION_CHAPTER: {
+            const newChapter = {id: uuidv4(), label: action.payload.title, items: []};
+            const chapters = [...state.chapters, newChapter];
+
+            return {
+                ...state,
+                chapters: chapters,
+            }
+        }
+        case ActionPoints.REMOVE_NAVIGATION_CHAPTER: {
+            const newChapters = state.chapters.filter(
+                chapter => chapter.id === action.payload.id
+            );
+
+            return {
+                ...state,
+                chapters: newChapters,
+            }
+        }
+        case ActionPoints.UPDATE_NAVIGATION_CHAPTER: {
+            const {id, title} = action.payload;
+
+            const newChapters = state.chapters.map(chapter => chapter.id === id
+                ? {...chapter, label: title}
+                : chapter
+            );
+
+            return {
+                ...state,
+                chapters: newChapters
+            }
+        }
         case ActionPoints.ADD_EDUCATION: {
             const newChapters = state.chapters.filter(chapter => chapter.label === 'Education'
                 ? {...chapter, items: [...chapter.items, {id: uuidv4(), ...action.payload}]}
@@ -55,7 +90,24 @@ export const aboutReducer = (state: AboutPageContextType, action: ActionsType) =
     }
 }
 
-export type ActionsType = AddEducationActionType | RemoveEducationActionType | UpdateEducationActionType;
+export type ActionsType = AddNavigationChapterActionType |
+    RemoveNavigationChapterActionType |
+    UpdateNavigationChapterActionType |
+    AddEducationActionType |
+    RemoveEducationActionType |
+    UpdateEducationActionType;
+type AddNavigationChapterActionType = {
+    type: ActionPoints.ADD_NAVIGATION_CHAPTER,
+    payload: {title: string}
+};
+type RemoveNavigationChapterActionType = {
+    type: ActionPoints.REMOVE_NAVIGATION_CHAPTER,
+    payload: {id: string}
+};
+type UpdateNavigationChapterActionType = {
+    type: ActionPoints.UPDATE_NAVIGATION_CHAPTER,
+    payload: {id: string, title: string}
+};
 type AddEducationActionType = {
     type: ActionPoints.ADD_EDUCATION,
     payload: {title: string, description: string}

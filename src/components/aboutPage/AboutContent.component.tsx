@@ -3,8 +3,14 @@ import {useEffect, useRef} from 'react';
 import {Title} from '../common/title/Title.component.tsx';
 
 import {
-    ContentContainerStyled, ContentTitleContainerStyled, EducationContainerStyled,
-    YearsStyled, TextContainerStyled, TextBoldStyled, DescriptionsContainerStyled, TextStyled,
+    ContentContainerStyled,
+    ContentTitleContainerStyled,
+    DescriptionsContainerStyled,
+    EducationContainerStyled,
+    TextBoldStyled,
+    TextContainerStyled,
+    TextStyled,
+    YearsStyled,
 } from './AboutPage.styled.ts';
 
 import {AboutChapterType} from "../../state/aboutPage/contextProvider.tsx";
@@ -18,14 +24,14 @@ export const AboutContent = ({chapter, activeChapter}: AboutContentPropsType) =>
     const chapterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (chapterRef.current && chapterRef.current.innerText === activeChapter) {
+        if (chapterRef.current && chapterRef.current?.innerText.indexOf(activeChapter) !== -1) {
             chapterRef.current.scrollIntoView({behavior: 'smooth', block: 'start'});
         }
     }, [chapterRef, activeChapter])
 
     return (
-        <ContentContainerStyled key={chapter.id}>
-            <ContentTitleContainerStyled ref={chapterRef}>
+        <ContentContainerStyled ref={chapterRef}>
+            <ContentTitleContainerStyled>
                 <Title variant='h1' color='#000' text={chapter.label}/>
             </ContentTitleContainerStyled>
             {chapter.items.map(item =>

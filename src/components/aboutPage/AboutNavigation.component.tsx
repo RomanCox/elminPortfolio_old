@@ -4,9 +4,19 @@ import {DownloadIcon} from '../../assets/icons/downloadIcon.tsx';
 import photo from '../../assets/images/photo/avatar.webp';
 
 import {
-    NavigationStyled, NavigationItemStyled, DescriptionContainerStyled, ChaptersStyled,
-    TitleContainerStyled, ImageContainer, ImageStyled, ButtonBlockContainerStyled, ButtonContainerStyled,
-    CVButtonStyled, CVButtonBorderStyled, BottomLineStyled, NavigationContainerStyled,
+    BottomLineStyled,
+    ButtonBlockContainerStyled,
+    ButtonContainerStyled,
+    ChaptersStyled,
+    CVButtonBorderStyled,
+    CVButtonStyled,
+    DescriptionContainerStyled,
+    ImageContainer,
+    ImageStyled,
+    NavigationContainerStyled,
+    NavigationItemsContainerStyled,
+    NavigationItemStyled,
+    TitleContainerStyled,
 } from './AboutPage.styled.ts';
 
 
@@ -30,7 +40,7 @@ export const AboutNavigation = ({activeChapter, chooseChapter, openModal}: About
                 </ImageContainer>
             </TitleContainerStyled>
             <ChaptersStyled>
-                <NavigationStyled>
+                <NavigationItemsContainerStyled>
                     {navigationChapters.map(chapter =>
                         <NavigationItemStyled
                             key={chapter}
@@ -40,7 +50,7 @@ export const AboutNavigation = ({activeChapter, chooseChapter, openModal}: About
                             <div>{chapter}</div>
                         </NavigationItemStyled>)
                     }
-                </NavigationStyled>
+                </NavigationItemsContainerStyled>
                 <DescriptionContainerStyled>
                     {context.description.map(text => <div key={text}>
                         {text}

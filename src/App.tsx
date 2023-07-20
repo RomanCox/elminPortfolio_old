@@ -8,8 +8,9 @@ import {HomePage} from './components/homePage/HomePage.component.tsx';
 import {AboutPage} from './components/aboutPage/AboutPage.component.tsx';
 import {AdminLayoutPage} from './components/adminPage/AdminLayoutPage.component.tsx';
 import {AboutContextProvider} from './state/aboutPage';
-import {ContactContextProvider} from './state/contacts';
+import {ContactsPageContextProvider} from './state/contactsPage';
 import {ContactsPage} from './components/contactsPage/ContactsPage.component.tsx';
+import {HomePageContextProvider} from './state/homePage/contextProvider.tsx';
 
 export const PATH = {
     EMPTY: '/',
@@ -44,27 +45,29 @@ export const App = () => {
             <Route
                 path={PATH.HOME}
                 element={
-                    <ContactContextProvider>
-                        <HomePage/>
-                    </ContactContextProvider>
+                    <HomePageContextProvider>
+                        <ContactsPageContextProvider>
+                            <HomePage/>
+                        </ContactsPageContextProvider>
+                    </HomePageContextProvider>
                 }
             />
             <Route
                 path={PATH.ABOUT}
                 element={
                     <AboutContextProvider>
-                        <ContactContextProvider>
+                        <ContactsPageContextProvider>
                             <AboutPage/>
-                        </ContactContextProvider>
+                        </ContactsPageContextProvider>
                     </AboutContextProvider>
                 }
             />
             <Route
                 path={PATH.CONTACTS}
                 element={
-                    <ContactContextProvider>
+                    <ContactsPageContextProvider>
                         <ContactsPage/>
-                    </ContactContextProvider>
+                    </ContactsPageContextProvider>
                 }
             />
             <Route

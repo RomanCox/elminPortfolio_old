@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import {TextField, IconButton, Button, Box, Tabs, Tab} from '@mui/material';
+import {TextField, IconButton, Button, Box, Tabs, Tab, Card} from '@mui/material';
+
+interface LoginContainerStyledPropsType {
+  $isWrong: boolean,
+}
 
 export const AdminPageContainerStyled = styled.div`
   width: 100%;
@@ -26,23 +30,17 @@ export const AdminContainerStyled = styled.div`
   box-sizing: border-box;
 `;
 
-export const ContentContainerStyled = styled(Box)`
-  
-`;
+export const ContentContainerStyled = styled(Box)``;
 
-export const TabsContainerStyled = styled(Box)`
-    
-`;
+export const TabsContainerStyled = styled(Box)``;
 
-export const TabsStyled = styled(Tabs)`
-  
-`;
+export const TabsStyled = styled(Tabs)``;
 
 export const TabStyled = styled(Tab)`
   &:active, &:focus { outline: none; }
 `;
 
-export const LoginContainerStyled = styled.div<{isWrong: boolean}>`
+export const LoginContainerStyled = styled.div<LoginContainerStyledPropsType>`
   width: 100%;
   height: 100%;
   display: flex;
@@ -51,7 +49,7 @@ export const LoginContainerStyled = styled.div<{isWrong: boolean}>`
   align-items: center;
   gap: 40px;
   box-sizing: border-box;
-  animation: ${({ isWrong }) => isWrong ? 'swing 0.6s ease 0s 1' : 'none'};
+  animation: ${({ $isWrong }) => $isWrong ? 'swing 0.6s ease 0s 1' : 'none'};
 
   @keyframes swing {
     15% {
@@ -122,7 +120,41 @@ export const IconButtonStyled = styled(IconButton)`
   transform: translateY(-50%);
 `;
 
-export const ButtonStyled = styled(Button)`
+export const LoginButtonStyled = styled(Button)`
   width: 50%;
   &:active, &:focus { outline: none; }
+`;
+
+export const AboutContextContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AdminComponentContainerStyled = styled.div`
+  display: flex;
+  gap: 30px;
+`;
+
+export const LabelContainerStyled = styled.div`
+  
+`;
+
+export const DataContainerStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AdminTableContainerStyled = styled.div`
+  max-width: 400px;
+`;
+
+export const CardStyled = styled(Card)`
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const ButtonStyled = styled(Button)`
+  max-width: 350px;
 `;

@@ -1,4 +1,9 @@
 import {SyntheticEvent, useState} from 'react';
+import {Dialog} from '@mui/material';
+
+import {Title} from '../common/title/Title.component.tsx';
+import {AdminAboutPage} from './AdminAboutPage.component.tsx';
+import {AddChapter} from './AddChapter.component.tsx';
 
 import {
     AdminContainerStyled,
@@ -7,14 +12,25 @@ import {
     TabsContainerStyled,
     TabsStyled,
     TabStyled,
-    TitleContainerStyled
+    TitleContainerStyled,
 } from './AdminPage.styled.ts';
-import {Title} from '../common/title/Title.component.tsx';
 
 export const AdminPage = () => {
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState<number>(0);
+    const [chapter, setChapter] = useState<string>('about');
+    const [isShow, setIsShow] = useState<boolean>(false);
+
+    const openModal = () => {
+        setIsShow(true);
+    }
+
+    const closeModal = () => {
+        setIsShow(false);
+    }
 
     const tabsClicker = (e: SyntheticEvent) => {
+        const value = e.currentTarget ? e.currentTarget.innerText : '';
+        setChapter(value.toLowerCase());
         const newValue: number = e.currentTarget.id.length ? Number(e.currentTarget.id.at(-1)) : 0;
         setValue(newValue);
     };
@@ -44,6 +60,12 @@ export const AdminPage = () => {
                     </TabsStyled>
                 </TabsContainerStyled>
             </ContentContainerStyled>
+            {chapter === 'about' ? <AdminAboutPage openModal={openModal}/>
+                : null
+            }
+            <Dialog onClose={closeModal} open={isShow}>
+                <AddChapter/>
+            </Dialog>
         </AdminContainerStyled>
     );
 };

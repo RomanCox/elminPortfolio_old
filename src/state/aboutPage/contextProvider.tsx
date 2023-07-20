@@ -34,18 +34,11 @@ const aboutPage = {
                     id: uuidv4(),
                     year: '2021-2022',
                     title: 'School Dviz',
-                    // description: [
-                    //     'Online Course "Unreal Engine 4 For Archviz"\n' +
-                    //     'Online Course "Unreal Engine 5 For Archviz"\n' +
-                    //     'Online Course "Essential Blueprints for Archviz"\n' +
-                    //     'Online Course "Marvelous designer for archviz"\n' +
-                    //     'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs'
-                    // ],
                     description: [
-                        'Online Course "Unreal Engine 4 For Archviz',
-                        'Online Course "Unreal Engine 5 For Archviz',
-                        'Online Course "Essential Blueprints for Archviz',
-                        'Online Course "Marvelous designer for Archviz',
+                        'Online Course "Unreal Engine 4 For Archviz"',
+                        'Online Course "Unreal Engine 5 For Archviz"',
+                        'Online Course "Essential Blueprints for Archviz"',
+                        'Online Course "Marvelous designer for Archviz"',
                         'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs'
                     ],
                 },
@@ -95,9 +88,9 @@ export interface AboutPageContextType {
 }
 
 export const useAboutPageState = () => {
-    const context = useContext(AboutStateContext);
+    const context = useContext(AboutStateContext);    
     if (context === undefined) {
-        throw new Error('useCountState must be used within a CountProvider')
+        throw new Error('useAboutPageState must be used within a AboutPageProvider')
     }
     return context
 }
@@ -105,7 +98,7 @@ export const useAboutPageState = () => {
 export const useAboutPageDispatch = () => {
     const context = useContext(AboutDispatchContext)
     if (context === undefined) {
-        throw new Error('useCountDispatch must be used within a CountProvider')
+        throw new Error('useAboutPageDispatch must be used within a AboutPageProvider')
     }
     return context
 }

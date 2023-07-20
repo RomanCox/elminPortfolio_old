@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {FooterPropsType} from './Footer.component.tsx';
 
 export const FooterContainerStyled = styled.div<FooterPropsType>`
-  width: 100%;
+  width: 100vw;
   max-width: 1920px;
   height: 75px;
   padding: 10px 30px;
@@ -30,6 +30,7 @@ export const LocationContainerStyled = styled.div<FooterPropsType>`
 export const SocialLinksContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   color: #fff;
   font-family: Libre Franklin, sans-serif;
   font-size: 20px;

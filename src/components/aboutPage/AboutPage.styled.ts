@@ -4,10 +4,14 @@ type NavigationItemStyledPropsType = {
     $isActive: boolean,
 }
 
+type GradientStyledPropsType = {
+    $reverse?: boolean,
+}
+
 export const AboutPageContainerStyled = styled.div`
   width: 100%;
   height: 100vh;
-  padding-top: 85px;
+  padding: 75px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -110,25 +114,35 @@ export const ImageStyled = styled.img`
 `;
 
 export const ChaptersStyled = styled.div`
-  width: 100%;
+  width: calc(100% - 140px);
   height: 100%;
-  padding-left: 400px;
+  padding-left: 384px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+
+  @media screen and (max-width: 1920px) {
+    padding-left: 20vw;
+  }
+
+  @media screen and (max-width: 1279px) {
+    padding-left: 30vw;
+  }
 `;
 
-export const NavigationStyled = styled.div`
+export const NavigationItemsContainerStyled = styled.div`
+  width: 100%;
   height: 60px;
   padding-left: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 150px;
+  gap: 50px;
+  overflow-x: scroll;
 `;
 
 export const NavigationItemStyled = styled.a<NavigationItemStyledPropsType>`
@@ -136,6 +150,7 @@ export const NavigationItemStyled = styled.a<NavigationItemStyledPropsType>`
   display: flex;
   align-items: center;
   position: relative;
+  color: black !important;
   font-family: Libre Franklin, sans-serif;
   font-size: ${({$isActive}) => $isActive ? '32px' : '24px'};
   line-height: 120%;
@@ -191,6 +206,7 @@ export const CVButtonStyled = styled.button`
 
   &:hover, &:active, &:focus {
     outline: none;
+    color: #343ca8;
   }
 
   &:hover, svg:hover {
@@ -218,6 +234,7 @@ export const CVButtonBorderStyled = styled.svg`
 
   &:hover {
     stroke-dashoffset: 0;
+    stroke: #343ca8;
   }
 `;
 
@@ -232,7 +249,7 @@ export const DescriptionContainerStyled = styled.div`
   font-size: 16px;
   line-height: 19px;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
   user-select: none;
 `;
 
@@ -246,20 +263,51 @@ export const BottomLineStyled = styled.div`
   background: #CDCCD7;
 `;
 
+export const AllContentWrapperStyled = styled.div`
+  width: 100%;
+  height: calc(100vh - 450px);
+  padding-left: 409px;
+  box-sizing: border-box;
+  position: relative;
+
+  @media screen and (max-width: 1920px) {
+    padding-left: calc(20vw + 25px);
+  }
+
+  @media screen and (max-width: 1279px) {
+    padding-left: calc(30vw + 25px);
+  }
+`;
+
+export const GradientStripeStyled = styled.div<GradientStyledPropsType>`
+  width: calc(100% - 20vw - 55px);
+  height: 50px;
+  box-sizing: border-box;
+  position: absolute;
+  top: ${({ $reverse = false }) => $reverse ? 'auto' : '-1px'};
+  bottom: ${({ $reverse = false }) => $reverse ? '-1px' : 'auto'};
+  right: 30px;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  background: ${({ $reverse = false }) => `linear-gradient(${$reverse ? '180deg' : '0deg'}, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)`};
+`;
+
 export const AllContentContainerStyled = styled.div`
   width: 100%;
-  padding: 0 30px 75px 450px;
+  height: 100%;
+  padding: 0 30px 50px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 50px;
-  overflow: auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(36, 36, 36, 0.3) rgba(36, 36, 36, 0.7);
 `;
 
 export const ContentContainerStyled = styled.div`
   width: 100%;
+  padding-top: 50px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -270,7 +318,6 @@ export const ContentContainerStyled = styled.div`
 
 export const ContentTitleContainerStyled = styled.div`
   width: 250px;
-  padding-top: 50px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
@@ -317,7 +364,6 @@ export const TextStyled = styled.div`
   font-weight: 500;
   text-align: left;
   user-select: none;
-  white-space: pre;
 `;
 
 export const TextBoldStyled = styled(TextStyled)`

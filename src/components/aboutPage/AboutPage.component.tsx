@@ -3,11 +3,12 @@ import {useState} from 'react';
 import {Header} from '../common/header/Header.component.tsx';
 import {AboutContentContainer} from './AboutContent.container.tsx';
 import {Footer} from '../common/footer/Footer.component.tsx';
+import {Modal} from '../common/modal/Modal.component.tsx';
+import {AboutNavigation} from './AboutNavigation.component.tsx';
+import {DownloadCV} from './DownloadCV.component.tsx';
 
 import {AboutPageContainerStyled,} from './AboutPage.styled.ts';
-import {Modal} from '../common/modal/Modal.component.tsx';
-import {AboutNavigation} from "./AboutNavigation.component.tsx";
-import {DownloadCV} from './DownloadCV.component.tsx';
+
 
 export const AboutPage = () => {
     const [modalIsShow, setModalIsShow] = useState<boolean>(false);

@@ -1,4 +1,4 @@
-import {useContactsState} from '../../state/contacts';
+import {useContactsPageState} from '../../state/contactsPage';
 
 import {
     AllContactsContainerStyled, SocialsContainerStyled, PhotoAndSocialsContainerStyled, SocialStyled, SocialIconStyled,
@@ -14,7 +14,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 
 export const Contacts = () => {
-    const context = useContactsState();
+    const context = useContactsPageState();
 
     return (
         <AllContactsContainerStyled>

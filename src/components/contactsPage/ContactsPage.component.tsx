@@ -1,4 +1,4 @@
-import {useContactsState} from '../../state/contacts';
+import {useContactsPageState} from '../../state/contactsPage';
 
 import {Header} from '../common/header/Header.component.tsx';
 import {Footer} from '../common/footer/Footer.component.tsx';
@@ -9,7 +9,7 @@ import {Contacts} from "./Contacts.container.tsx";
 
 
 export const ContactsPage = () => {
-    const context = useContactsState();
+    const context = useContactsPageState();
 
     return (
         <ContactsPageContainerStyled>

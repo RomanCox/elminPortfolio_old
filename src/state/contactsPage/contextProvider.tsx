@@ -1,5 +1,5 @@
 import {createContext, ReactNode, useContext, useReducer} from 'react';
-import {contactReducer, ActionsType} from './reducer.ts';
+import {contactsPageReducer, ActionsType} from './reducer.ts';
 import {v4 as uuidv4} from 'uuid';
 
 interface ContextProviderPropsType {
@@ -8,10 +8,10 @@ interface ContextProviderPropsType {
 
 export type DispatchType = (action: ActionsType) => void;
 
-export const ContactsStateContext = createContext<ContactsContextType | undefined>(undefined);
-export const ContactsDispatchContext = createContext<DispatchType | undefined>(undefined);
+export const ContactsPageStateContext = createContext<ContactsPageContextType | undefined>(undefined);
+export const ContactsPageDispatchContext = createContext<DispatchType | undefined>(undefined);
 
-const contacts = {
+const contactsPage = {
     id: uuidv4(),
     title: 'Contacts',
     photo: '../src/assets/images/photo/avatar.webp',
@@ -88,7 +88,7 @@ interface ContactType {
     link: string,
 }
 
-export type ContactsContextType = {
+export type ContactsPageContextType = {
     id: string,
     title: string,
     photo: string,
@@ -96,28 +96,28 @@ export type ContactsContextType = {
     contacts: Array<ContactType>,
 };
 
-export const ContactContextProvider = ({children}: ContextProviderPropsType) => {
-    const [state, dispatch] = useReducer(contactReducer, contacts);
+export const ContactsPageContextProvider = ({children}: ContextProviderPropsType) => {
+    const [state, dispatch] = useReducer(contactsPageReducer, contactsPage);
 
     return (
-        <ContactsStateContext.Provider value={state}>
-            <ContactsDispatchContext.Provider value={dispatch}>
+        <ContactsPageStateContext.Provider value={state}>
+            <ContactsPageDispatchContext.Provider value={dispatch}>
                 {children}
-            </ContactsDispatchContext.Provider>
-        </ContactsStateContext.Provider>
+            </ContactsPageDispatchContext.Provider>
+        </ContactsPageStateContext.Provider>
     )
 }
 
-export const useContactsState = () => {
-    const context = useContext(ContactsStateContext);
+export const useContactsPageState = () => {
+    const context = useContext(ContactsPageStateContext);
     if (context === undefined) {
         throw new Error('useCountState must be used within a CountProvider')
     }
     return context
 }
 
-export const useContactsDispatch = () => {
-    const context = useContext(ContactsDispatchContext)
+export const useContactsPageDispatch = () => {
+    const context = useContext(ContactsPageDispatchContext)
     if (context === undefined) {
         throw new Error('useCountDispatch must be used within a CountProvider')
     }

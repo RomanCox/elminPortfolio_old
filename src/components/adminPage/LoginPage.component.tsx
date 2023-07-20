@@ -1,13 +1,14 @@
 import {ChangeEvent, Dispatch, SetStateAction, useState} from 'react';
-
-import {
-    LoginContainerStyled, TitleContainerStyled, LabelStyled,
-    FormStyled, IconButtonStyled, ButtonStyled, InputStyled,
-} from './AdminPage.styled.ts';
-import {Title} from '../common/title/Title.component.tsx';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import LoginIcon from '@mui/icons-material/Login';
+
+import {Title} from '../common/title/Title.component.tsx';
+
+import {
+    LoginContainerStyled, TitleContainerStyled, LabelStyled,
+    FormStyled, IconButtonStyled, LoginButtonStyled, InputStyled,
+} from './AdminPage.styled.ts';
 
 interface PropsType {
     setIsRight: Dispatch<SetStateAction<boolean>>,
@@ -44,7 +45,7 @@ export const LoginPage = ({setIsRight, isWrong, setIsWrong}: PropsType) => {
     }
 
     return (
-        <LoginContainerStyled isWrong={isWrong}>
+        <LoginContainerStyled $isWrong={isWrong}>
             <TitleContainerStyled>
                 <Title variant='h1' color='#000' text='Hello, Elmin!'/>
             </TitleContainerStyled>
@@ -56,7 +57,7 @@ export const LoginPage = ({setIsRight, isWrong, setIsWrong}: PropsType) => {
                         {passIsShow ? <VisibilityOffIcon/> : <VisibilityIcon/>}
                     </IconButtonStyled>
                 </LabelStyled>
-                <ButtonStyled variant='contained' onClick={onSubmitHandler} endIcon={<LoginIcon />}><b>Login</b></ButtonStyled>
+                <LoginButtonStyled variant='contained' onClick={onSubmitHandler} endIcon={<LoginIcon />}><b>Login</b></LoginButtonStyled>
             </FormStyled>
         </LoginContainerStyled>
     );

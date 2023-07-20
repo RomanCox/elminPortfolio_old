@@ -1,14 +1,14 @@
 import {SocialLinkStyled, ImageStyled} from './IconSet.styled.ts';
-import {useContactsState} from '../../../state/contacts';
+import {useContactsPageState} from '../../../state/contactsPage';
 
 export const IconSet = () => {
-    const contacts = useContactsState().contacts.filter(contact => contact.iconSet);
+    const socials = useContactsPageState().socials;
 
     return (
         <>
-            {contacts.map(contact =>
-                <SocialLinkStyled key={contact.id} title={`link to ${contact.title}`}>
-                    <ImageStyled src={contact.icon} alt={`${contact.title} icon`}/>
+            {socials.map(social =>
+                <SocialLinkStyled key={social.id} title={`link to ${social.title}`}>
+                    <ImageStyled src={social.icon} alt={`${social.title} icon`}/>
                 </SocialLinkStyled>
             )}
         </>
