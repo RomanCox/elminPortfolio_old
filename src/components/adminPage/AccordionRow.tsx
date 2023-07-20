@@ -34,7 +34,7 @@ export const AccordionRow = ({ chapter, accordionTitle, onChangeHandler, openMod
             </AccordionSummary>
             <AccordionDetails>
                 {chapter.values.map(value =>
-                    <CardStyled>
+                    <CardStyled key={value}>
                         <AddIconAndTextStyled>
                             <IconButton aria-label='delete'>
                                 <RemoveCircleOutlineRoundedIcon color='error'/>

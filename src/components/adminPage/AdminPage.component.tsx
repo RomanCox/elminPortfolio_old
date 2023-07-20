@@ -29,7 +29,10 @@ export const AdminPage = () => {
     }
 
     const tabsClicker = (e: SyntheticEvent) => {
-        const value = e.currentTarget ? e.currentTarget.innerText : '';
+        //const value = e.currentTarget ? e.currentTarget.innerText : '';
+        const rawText = e.currentTarget.innerHTML;
+        const value = rawText.slice(0, e.currentTarget.innerHTML.indexOf('<'));
+        console.log(value);
         setChapter(value.toLowerCase());
         const newValue: number = e.currentTarget.id.length ? Number(e.currentTarget.id.at(-1)) : 0;
         setValue(newValue);
