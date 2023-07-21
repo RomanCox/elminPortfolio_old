@@ -335,6 +335,7 @@ export const EducationContainerStyled = styled.div`
 `;
 
 export const YearsStyled = styled.div`
+  width: 100px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

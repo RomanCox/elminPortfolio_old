@@ -28,7 +28,25 @@ const aboutPage = {
                     id: uuidv4(),
                     year: '2004-2008',
                     title: 'College of Architecture and Civil Engineering as part of the Interstate Educational Institution of Higher Education "Belarusian-Russian University"',
-                    description: ['Faculty of Industrial and Civil Engineering',]
+                    description: ['Faculty of Industrial and Civil Engineering',],
+                },
+                {
+                    id: uuidv4(),
+                    year: '2021',
+                    title: '3D School GRIPINSKY',
+                    description: ['3d Modeling and Visualisation Course (3ds Max + Corona , V-Ray)',],
+                },
+                {
+                    id: uuidv4(),
+                    year: '2021',
+                    title: 'School Artem Gogolov',
+                    description: ['3d Modeling and Visualisation. Creation of highly detailed models of soft  shapes (folds, sofas, beds, etc.). Studying 3ds Max  + Marvelous Designer',],
+                },
+                {
+                    id: uuidv4(),
+                    year: '2021-2022',
+                    title: 'School of Architecture, Design and Graphics ARHI.TEACH',
+                    description: ['Developing projects in Unreal Engine. Creating  animations and architectural walkthroughs.',],
                 },
                 {
                     id: uuidv4(),
@@ -42,17 +60,108 @@ const aboutPage = {
                         'Developing projects in Unreal Engine. Creating animations and architectural walkthroughs'
                     ],
                 },
+                {
+                    id: uuidv4(),
+                    year: '2021-2022',
+                    title: 'School RENDER.CAMP',
+                    description: ['Professional visualisation of interiors and exteriors in 3ds Max (Corona, VRay,  FStorm)',],
+                },
             ]
         },
         {
             id: uuidv4(),
             label: 'Experience',
-            items: []
+            items: [
+                {
+                    id: uuidv4(),
+                    year: '2020-now',
+                    title: 'Freelance, CG-Artist',
+                    description: [
+                        '3D Modeling and visualisation:',
+                        '- furniture catalog',
+                        '- architectural projects on autocad drawings, diagrams, photos',
+                        '- interiors in 3ds Max + Corona/Vray, Marvelous Designer',
+                        'Architectural rendering  in Unreal Engine 4/5:',
+                        '- optimization, light baking, RTX/Lumen technologies',
+                        '- animation of interiors and exteriors',
+                        '- interactive projects',
+                        '- VR/AR',
+                        'Performed one-time and long-term projects for studious in CIS, Europe, America & Africa',
+                    ],
+                },
+            ]
         },
         {
             id: uuidv4(),
             label: 'Skills',
-            items: []
+            items: [
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: '3D modeling 3ds Max',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'UV unfold',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Corona/Vray visualization',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Photoshop post-processing',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: '3d modeling Marvelous Designer',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Visualization in Unreal Engine',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Unreal Engine animation',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Creating interactive projects in UE 4/5',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Setting up blueprints',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Creating VR projects',
+                    description: [],
+                },
+                {
+                    id: uuidv4(),
+                    year: '',
+                    title: 'Montage and color grading in DaVinci Resolve',
+                    description: [],
+                },
+            ]
         },
         {
             id: uuidv4(),
@@ -62,7 +171,14 @@ const aboutPage = {
         {
             id: uuidv4(),
             label: 'Awards',
-            items: []
+            items: [
+                {
+                    id: uuidv4(),
+                    year: 'Aug 5 2022',
+                    title: 'Dviz Awards',
+                    description: [],
+                },
+            ]
         },
     ],
 }

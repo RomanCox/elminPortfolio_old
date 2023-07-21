@@ -36,14 +36,14 @@ export const AboutContent = ({chapter, activeChapter}: AboutContentPropsType) =>
             </ContentTitleContainerStyled>
             {chapter.items.map(item =>
                 <EducationContainerStyled key={item.id}>
-                    <YearsStyled>{item.year}</YearsStyled>
+                    {item.year && <YearsStyled > {item.year}</YearsStyled>}
                     <TextContainerStyled>
                         <TextBoldStyled>
                             {item.title}
                         </TextBoldStyled>
-                        <DescriptionsContainerStyled>
+                        {item.description.length !== 0 && <DescriptionsContainerStyled>
                             {item.description.map(desc => <TextStyled key={desc}>{desc}</TextStyled>)}
-                        </DescriptionsContainerStyled>
+                        </DescriptionsContainerStyled>}
                     </TextContainerStyled>
                 </EducationContainerStyled>
             )}
