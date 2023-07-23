@@ -23,30 +23,35 @@ const contactsPage = {
             //icon: '../src/assets/icons/linkedin.webp',
             icon: '/socialIcons/linkedin.webp',
             link: 'https://www.linkedin.com/in/elminkaraev',
+            label: '',
         },
         {
             id: uuidv4(),
             title: 'Telegram',
             icon: '/socialIcons/telegram.webp',
             link: 'https://t.me/karaevelmin',
+            label: '',
         },
         {
             id: uuidv4(),
             title: 'Instagram',
             icon: '/socialIcons/instagram.webp',
             link: 'https://www.instagram.com/karaevelmin',
+            label: '',
         },
         {
             id: uuidv4(),
             title: 'Behance',
             icon: '/socialIcons/behance.webp',
             link: 'https://www.behance.net/elminkaraev',
+            label: '',
         },
         {
             id: uuidv4(),
             title: 'Youtube',
             icon: '/socialIcons/youtube.webp',
             link: 'https://www.youtube.com/channel/UC3w6lpvEkOH6LDl0m_YJrUw',
+            label: '',
         },
     ],
     contacts: [
@@ -54,31 +59,36 @@ const contactsPage = {
             id: uuidv4(),
             title: 'Location',
             icon: '',
-            link: 'Warsaw, Poland',
+            link: 'https://goo.gl/maps/XcY57iYYBMcHvmEq6',
+            label: 'Warsaw, Poland',
         },
         {
             id: uuidv4(),
             title: 'Email',
             icon: '',
-            link: 'karaevelmin@gmail.com',
+            link: 'mailto:karaevelmin@gmail.com',
+            label: 'karaevelmin@gmail.com',
         },
         {
             id: uuidv4(),
             title: 'Phone | Whatsapp | Viber',
             icon: '',
-            link: '+375445989809',
+            link: 'tel:+375445989809',
+            label: '+375445989809',
         },
         {
             id: uuidv4(),
             title: 'Telegram',
             icon: '../src/assets/icons/telegram.webp',
             link: 'https://t.me/karaevelmin',
+            label: '@karaevelmin',
         },
         {
             id: uuidv4(),
             title: 'Facebook',
             icon: '../src/assets/icons/facebook.webp',
             link: 'https://www.facebook.com/profile.php?id=100080225493177',
+            label: 'Elmin Karaev',
         },
     ],
 }
@@ -88,6 +98,7 @@ interface ContactType {
     title: string,
     icon: string,
     link: string,
+    label: string,
 }
 
 export type ContactsPageContextType = {

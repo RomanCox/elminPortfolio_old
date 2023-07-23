@@ -50,8 +50,8 @@ export const Contacts = () => {
                                 }
                                 {contact.title}
                             </ContactLabelStyled>
-                            <ContactStyled>
-                                {contact.link}
+                            <ContactStyled href={contact.link} target='_blanc' rel='nofollow noreferrer'>
+                                {contact.label}
                             </ContactStyled>
                         </ContactContainerStyled>
                     )}

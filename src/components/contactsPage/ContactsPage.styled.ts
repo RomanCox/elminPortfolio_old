@@ -27,13 +27,19 @@ export const TitleContainerStyled = styled.div`
 `;
 
 export const AllContactsContainerStyled = styled.div`
-  width: 600px;
+  max-width: 600px;
+  padding: 0 30px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 50px;
+
+  @media screen and (max-width: 509px) {
+    width: 100%;
+    max-width: none;
+  }
 `;
 
 export const PhotoAndSocialsContainerStyled = styled.div`
@@ -43,6 +49,10 @@ export const PhotoAndSocialsContainerStyled = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 50px;
+  
+  @media screen and (max-width: 509px) {
+    
+  }
 `;
 
 export const PhotoContainerStyled = styled.div`
@@ -73,6 +83,10 @@ export const SocialsContainerStyled = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 509px) {
+    min-width: 115px;
+  }
 `;
 
 export const SocialStyled = styled.a`
@@ -161,7 +175,7 @@ export const ContactLabelStyled = styled.div`
   white-space: nowrap;
 `;
 
-export const ContactStyled = styled.div`
+export const ContactStyled = styled.a`
   padding-left: 29px;
   font-family: Libre Franklin, sans-serif;
   font-size: 16px;
@@ -169,4 +183,5 @@ export const ContactStyled = styled.div`
   font-weight: 600;
   text-align: start;
   user-select: none;
+  cursor: pointer;
 `;

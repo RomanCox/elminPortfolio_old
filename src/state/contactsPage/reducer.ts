@@ -17,7 +17,7 @@ export const contactsPageReducer = (state: ContactsPageContextType, action: Acti
             return {...state, photo: action.payload.photo}
         }
         case ActionPoints.ADD_SOCIAL: {
-            return {...state, socials: [...state.socials, {id: uuidv4(), ...action.payload}]}
+            return {...state, socials: [...state.socials, {id: uuidv4(), ...action.payload, label: ''}]}
         }
         case ActionPoints.REMOVE_SOCIAL: {
             const {id} = action.payload;
@@ -41,10 +41,10 @@ export const contactsPageReducer = (state: ContactsPageContextType, action: Acti
             return {...state, contacts: state.contacts.filter(contact => contact.id !== id)}
         }
         case ActionPoints.UPDATE_CONTACT: {
-            const {id, title, icon = '', link} = action.payload;
+            const {id, title, icon = '', link, label} = action.payload;
 
             return {...state, contacts: state.contacts.map(contact => contact.id === id
-                    ? {...contact, title, icon, link}
+                    ? {...contact, title, icon, link, label}
                     : contact
                 )}
         }
@@ -79,7 +79,7 @@ type UpdateSocialActionType = {
 };
 type AddContactActionType = {
     type: ActionPoints.ADD_CONTACT,
-    payload: {title: string, icon: string, link: string}
+    payload: {title: string, icon: string, link: string, label: string}
 };
 type RemoveContactActionType = {
     type: ActionPoints.REMOVE_CONTACT,
@@ -87,7 +87,7 @@ type RemoveContactActionType = {
 };
 type UpdateContactActionType = {
     type: ActionPoints.UPDATE_CONTACT,
-    payload: {id: string, title: string, icon: string, link: string}
+    payload: {id: string, title: string, icon: string, link: string, label: string}
 };
 
 export const ChangePhotoAC = (photo: string): ChangePhotoActionType => {
@@ -106,15 +106,15 @@ export const UpdateSocialAC = (id: string, title: string, icon: string, link: st
     return {type: ActionPoints.UPDATE_SOCIAL,
         payload: {id, title, icon, link}}
 };
-export const AddContactAC = (title: string, icon: string, link: string): AddContactActionType => {
+export const AddContactAC = (title: string, icon: string, link: string, label: string): AddContactActionType => {
     return {type: ActionPoints.ADD_CONTACT,
-        payload: {title, icon, link}}
+        payload: {title, icon, link, label}}
 };
 export const RemoveContactAC = (id: string): RemoveContactActionType => {
     return {type: ActionPoints.REMOVE_CONTACT,
         payload: {id}}
 };
-export const UpdateContactAC = (id: string, title: string, icon: string, link: string): UpdateContactActionType => {
+export const UpdateContactAC = (id: string, title: string, icon: string, link: string, label: string): UpdateContactActionType => {
     return {type: ActionPoints.UPDATE_CONTACT,
-        payload: {id, title, icon, link}}
+        payload: {id, title, icon, link, label}}
 };

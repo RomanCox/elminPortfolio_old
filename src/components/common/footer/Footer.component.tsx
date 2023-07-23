@@ -15,8 +15,7 @@ export const Footer = ({$homePage = false}: FooterPropsType) => {
     return (
         <FooterContainerStyled $homePage={$homePage}>
             <LocationContainerStyled $homePage={$homePage}>
-                {/*Warsaw, Poland*/}
-                {location?.link}
+                {location?.label}
             </LocationContainerStyled>
             <SocialLinksContainerStyled>
                 {$homePage ? 'Portfolio'
