@@ -9,7 +9,7 @@ interface HeaderPropsType {
 export const HeaderContainerStyled = styled.div<HeaderPropsType>`
   width: 100vw;
   max-width: 1920px;
-  padding: ${({ $homePage }) => $homePage ? '20px 30px 15px' : '20px 0 15px 30px'};
+  padding: 20px 30px 15px;
   position: fixed;
   top: 0;
   left: 50%;
@@ -17,15 +17,13 @@ export const HeaderContainerStyled = styled.div<HeaderPropsType>`
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  align-items: ${({ $homePage }) => $homePage ? 'center' : 'flex-end'};
+  align-items: ${({ $homePage }) => $homePage? 'center' : 'flex-end'};
   box-sizing: border-box;
-`;
+  background: ${({ $homePage }) => $homePage ? 'transparent)' : '#fff'};
 
-export const BurgerButtonContainerStyled = styled.div`
-  width: 250px;
-  height: 30px;
-  display: flex;
-  justify-content: flex-start;
+  @media screen and (max-width: 899px) {
+    align-items: center;
+  }
 `;
 
 export const BurgerButtonStyled = styled.div`
@@ -43,8 +41,8 @@ export const BarsStyled = styled.div<BurgerStyledPropsType>`
   width: 90%;
   height: 5px;
   border-radius: 2.5px;
-  background-color: ${({ $isBurgerMenuOpened }) =>
-          $isBurgerMenuOpened ? 'transparent' : '#fff'};
+  background-color: ${({ $isBurgerMenuOpened,  $homePage}) =>
+          $isBurgerMenuOpened ? 'transparent' : $homePage ? '#fff' : '#000'};
   position: relative;
   transition: ${({ $isBurgerMenuOpened }) =>
           $isBurgerMenuOpened ? 'all 0ms 300ms' : 'none'};
@@ -60,7 +58,7 @@ export const BarsStyled = styled.div<BurgerStyledPropsType>`
             $isBurgerMenuOpened ? '0' : '10px'};
     transform: ${({ $isBurgerMenuOpened }) =>
             $isBurgerMenuOpened ? 'rotate(-45deg)' : 'none'};
-    background-color: #fff;
+    background-color: ${({ $homePage }) => $homePage ? '#fff' : '#000'};
     transition: ${({ $isBurgerMenuOpened }) =>
             $isBurgerMenuOpened
                     ? 'bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)'
@@ -77,7 +75,7 @@ export const BarsStyled = styled.div<BurgerStyledPropsType>`
     top: ${({ $isBurgerMenuOpened }) => ($isBurgerMenuOpened ? '0' : '10px')};
     transform: ${({ $isBurgerMenuOpened }) =>
             $isBurgerMenuOpened ? 'rotate(45deg)' : 'none'};
-    background-color: #fff;
+    background-color: ${({ $homePage }) => $homePage ? '#fff' : '#000'};
     transition: ${({ $isBurgerMenuOpened }) =>
             $isBurgerMenuOpened
                     ? 'top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)'
@@ -172,9 +170,9 @@ export const NavbarItemStyled = styled(NavLink)`
     color: #000;
   }
   
-  &:last-child {
-    padding-right: 30px;
-  }
+  //&:last-child {
+  //  padding-right: 30px;
+  //}
 
   @media screen and (max-width: 1279px) {
     padding: 0 20px;

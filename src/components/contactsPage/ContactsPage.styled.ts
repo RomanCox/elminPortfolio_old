@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ContactsPageContainerStyled = styled.div`
   width: 100%;
-  height: 100vh;
+  max-width: 1920px;
+  min-height: 100vh;
   padding: 75px 0;
   box-sizing: border-box;
   display: flex;
@@ -10,6 +11,7 @@ export const ContactsPageContainerStyled = styled.div`
   justify-content: flex-start;
   align-items: center;
   background: #fff;
+  position: relative;
 `;
 
 export const TitleContainerStyled = styled.div`
@@ -40,6 +42,10 @@ export const AllContactsContainerStyled = styled.div`
     width: 100%;
     max-width: none;
   }
+
+  @media screen and (max-width: 480px) {
+    align-items: center;
+  }
 `;
 
 export const PhotoAndSocialsContainerStyled = styled.div`
@@ -50,8 +56,10 @@ export const PhotoAndSocialsContainerStyled = styled.div`
   justify-content: flex-start;
   gap: 50px;
   
-  @media screen and (max-width: 509px) {
-    
+  @media screen and (max-width: 480px) {
+    width: auto;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -120,10 +128,13 @@ export const ContactsWrapperStyled = styled.div`
   align-items: flex-start;
   gap: 50px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 480px) {
+    align-items: center;
+  }
 `;
 
 export const ContactsTitleContainerStyled = styled.div`
-  width: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
@@ -136,7 +147,6 @@ export const ContactsTitleContainerStyled = styled.div`
 `;
 
 export const ContactsContainerStyled = styled.div`
-  width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
@@ -149,6 +159,10 @@ export const ContactsContainerStyled = styled.div`
   font-weight: 600;
   text-align: start;
   user-select: none;
+
+  @media screen and (max-width: 522px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContactContainerStyled = styled.div`
@@ -158,6 +172,10 @@ export const ContactContainerStyled = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   gap: 5px;
+
+  @media screen and (max-width: 480px) {
+    align-items: center;
+  }
 `;
 
 export const ContactLabelStyled = styled.div`

@@ -35,7 +35,7 @@ export const Contacts = () => {
             </PhotoAndSocialsContainerStyled>
             <ContactsWrapperStyled>
                 <ContactsTitleContainerStyled>
-                    <Title variant='h3' color='#000' text='Contacts'/>
+                    <Title variant='h3' color='#000' text='Info'/>
                 </ContactsTitleContainerStyled>
                 <ContactsContainerStyled>
                     {context.contacts.map(contact =>

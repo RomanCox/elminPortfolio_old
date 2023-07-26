@@ -9,7 +9,6 @@ import {Title} from '../common/title/Title.component.tsx';
 import {Footer} from '../common/footer/Footer.component.tsx';
 import {BurgerMenu} from '../common/burgerMenu/BurgerMenu.component.tsx';
 
-
 export const HomePage = () => {
 	const [menuIsShow, setMenuIsShow] = useState<boolean>(false);
 
@@ -23,7 +22,7 @@ export const HomePage = () => {
 		<HomePageContainerStyled>
 			<VideoBG/>
 			<Header menuIsShow={menuIsShow} menuSwitch={menuSwitch} homePage/>
-			<BurgerMenu menuIsShow={menuIsShow}/>
+			<BurgerMenu menuIsShow={menuIsShow} homePage/>
 			<ContentContainerStyled>
 				<TitleContainer>
 					<Title text='Elmin Karaev' variant='h2' color='#fff'/>

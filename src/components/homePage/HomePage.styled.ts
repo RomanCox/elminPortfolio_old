@@ -6,10 +6,10 @@ export const HomePageContainerStyled = styled.div`
   max-width: 1920px;
   min-height: 100vh;
   max-height: 100vh;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const VideoBGContainerStyled = styled.div`

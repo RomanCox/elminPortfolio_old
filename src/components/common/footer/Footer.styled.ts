@@ -15,7 +15,7 @@ export const FooterContainerStyled = styled.div<FooterPropsType>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: ${({ $homePage }) => $homePage ? 'rgba(0, 0, 0, 0.5)' : 'transparent'};
+  background: ${({ $homePage }) => $homePage ? 'rgba(0, 0, 0, 0.5)' : '#fff'};
 `;
 
 export const LocationContainerStyled = styled.div<FooterPropsType>`
