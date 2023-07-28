@@ -63,7 +63,7 @@ export const Header = ({
                     </SocialLinksAndLangContainerStyled>
                 </>
                 : <>
-                    <LogoContainerStyled>
+                    <LogoContainerStyled href={PATH.HOME}>
                         <Logo variant='black'/>
                     </LogoContainerStyled>
                     {isShowBurgerButton

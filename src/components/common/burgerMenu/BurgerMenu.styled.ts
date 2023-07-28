@@ -23,7 +23,10 @@ export const MenuContainerStyled = styled.div<MenuContainerStyledPropsType & Hom
   justify-content: ${({ $homePage }) => $homePage ? 'flex-start' : 'flex-end'};
   align-items: flex-start;
   opacity: ${({ $menuIsShow }) => $menuIsShow ? '1' : '0'};
-  transform: ${({ $menuIsShow }) => $menuIsShow ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({ $menuIsShow, $homePage }) => $menuIsShow
+          ? 'translateX(0)'
+          : $homePage ? 'translateX(-100%)' : 'translateX(100%)'
+};
   transition: all 0.5s ease-in-out 0s;
 `;
 

@@ -5,8 +5,7 @@ import photo from '../../assets/images/photo/avatar.webp';
 
 import {
     BottomLineStyled,
-    ButtonBlockContainerStyled,
-    ButtonContainerStyled,
+    ButtonsContainerStyled,
     ChaptersStyled,
     CVButtonBorderStyled,
     CVButtonStyled,
@@ -40,25 +39,18 @@ export const AboutNavigation = ({activeChapter, chooseChapter, openModal}: About
                 </ImageContainer>
             </TitleContainerStyled>
             <ChaptersStyled>
-                <NavigationItemsContainerStyled>
-                    {navigationChapters.map(chapter =>
-                        <NavigationItemStyled
-                            key={chapter}
-                            $isActive={chapter === activeChapter}
-                            onClick={() => chooseChapter(chapter)}
-                        >
-                            <div>{chapter}</div>
-                        </NavigationItemStyled>)
-                    }
-                </NavigationItemsContainerStyled>
-                <DescriptionContainerStyled>
-                    {context.description.map(text => <div key={text}>
-                        {text}
-                    </div>)}
-                </DescriptionContainerStyled>
-            </ChaptersStyled>
-            <ButtonBlockContainerStyled>
-                <ButtonContainerStyled>
+                <ButtonsContainerStyled>
+                    <NavigationItemsContainerStyled>
+                        {navigationChapters.map(chapter =>
+                            <NavigationItemStyled
+                                key={chapter}
+                                $isActive={chapter === activeChapter}
+                                onClick={() => chooseChapter(chapter)}
+                            >
+                                <div>{chapter}</div>
+                            </NavigationItemStyled>)
+                        }
+                    </NavigationItemsContainerStyled>
                     <CVButtonStyled onClick={openModal}>
                         <CVButtonBorderStyled width='100px' height='40px' viewBox='0 0 100 40'>
                             <polyline points='1,39 99,39 99,1 1,1 1,39'/>
@@ -66,8 +58,24 @@ export const AboutNavigation = ({activeChapter, chooseChapter, openModal}: About
                         <DownloadIcon/>
                         CV
                     </CVButtonStyled>
-                </ButtonContainerStyled>
-            </ButtonBlockContainerStyled>
+                </ButtonsContainerStyled>
+                <DescriptionContainerStyled>
+                    {context.description.map(text => <div key={text}>
+                        {text}
+                    </div>)}
+                </DescriptionContainerStyled>
+            </ChaptersStyled>
+            {/*<ButtonBlockContainerStyled>*/}
+            {/*    <ButtonContainerStyled>*/}
+            {/*        <CVButtonStyled onClick={openModal}>*/}
+            {/*            <CVButtonBorderStyled width='100px' height='40px' viewBox='0 0 100 40'>*/}
+            {/*                <polyline points='1,39 99,39 99,1 1,1 1,39'/>*/}
+            {/*            </CVButtonBorderStyled>*/}
+            {/*            <DownloadIcon/>*/}
+            {/*            CV*/}
+            {/*        </CVButtonStyled>*/}
+            {/*    </ButtonContainerStyled>*/}
+            {/*</ButtonBlockContainerStyled>*/}
             <BottomLineStyled/>
         </NavigationContainerStyled>
     );

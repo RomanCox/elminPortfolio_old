@@ -10,6 +10,7 @@ type GradientStyledPropsType = {
 
 export const AboutPageContainerStyled = styled.div`
   width: 100%;
+  max-width: 100%;
   height: 100vh;
   padding: 75px 0;
   box-sizing: border-box;
@@ -18,6 +19,8 @@ export const AboutPageContainerStyled = styled.div`
   justify-content: flex-start;
   align-items: center;
   background: #fff;
+  position: relative;
+  overflow-x: hidden;
 `;
 
 export const CVDownloadMenuContainerStyled = styled.div`
@@ -93,7 +96,6 @@ export const TitleContainerStyled = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  width: 100%;
   height: 275px;
   padding: 20px;
   position: absolute;
@@ -112,7 +114,7 @@ export const ImageStyled = styled.img`
 `;
 
 export const ChaptersStyled = styled.div`
-  width: calc(100% - 140px);
+  max-width: calc(100% - 210px);
   height: 100%;
   padding-left: 174px;
   box-sizing: border-box;
@@ -131,10 +133,20 @@ export const ChaptersStyled = styled.div`
   }
 `;
 
-export const NavigationItemsContainerStyled = styled.div`
-  width: 100%;
+export const ButtonsContainerStyled = styled.div`
+  max-width: 100%;
   height: 60px;
   padding-left: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+`;
+
+export const NavigationItemsContainerStyled = styled.div`
+  max-width: 100%;
+  height: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;

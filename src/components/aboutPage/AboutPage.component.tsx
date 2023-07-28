@@ -10,11 +10,11 @@ import {DownloadCV} from './DownloadCV.component.tsx';
 
 import {AboutPageContainerStyled,} from './AboutPage.styled.ts';
 
-
 export const AboutPage = () => {
     const [modalIsShow, setModalIsShow] = useState<boolean>(false);
     const [activeChapter, setActiveChapter] = useState<string>('Education');
     const [menuIsShow, setMenuIsShow] = useState<boolean>(false);
+
 
     const menuSwitch = () => {
         setMenuIsShow(!menuIsShow);

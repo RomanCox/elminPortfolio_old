@@ -32,12 +32,14 @@ export const TitleContainerStyled = styled.div`
 
 export const ContextContainerStyled = styled.div`
   width: 100%;
+  max-height: calc(100% - 147px);
   padding: 30px 30px 50px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 100px;
+  overflow-y: auto;
 `;
 
 export const ServiceContainerStyled = styled.div`

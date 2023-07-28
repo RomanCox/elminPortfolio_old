@@ -40,7 +40,6 @@ body {
 
   scrollbar-color: rgba(36, 36, 36, 0.3) rgba(36, 36, 36, 0.7);
   scrollbar-width: thin;
-  overflow-x: hidden;
 }
 
 body > div {
